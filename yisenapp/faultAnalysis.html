@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+	 
+	<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/getToken.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/nav.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pageJs/Report.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pageJs/faultAnalysis.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="report.html#lv1"></a>
+	    <h1 class="mui-title">故障分析</h1>
+	</header>
+	<div class="mui-content">
+		<div class="check module">
+			<h4>请选择可能导致该报警的原因进行分析</h4>
+			<ul id="analysislist">
+				<!--激活-->
+				<li class="active">
+					<i class="icon"></i>
+					<label for="">是否被烟尘盖住</label>
+				</li>
+				<li>
+					<i class="icon"></i>
+					<label for="">电机过热</label>
+				</li>
+				<li>
+					<i class="icon"></i>
+					<label for="">雨水渗漏</label>
+				</li>
+			</ul>
+		</div>
+	    <div class="btnBox padding">
+	    	<button class="b">查看解决方案</button>
+	    </div>
+	</div>
+	<script type="text/javascript">
+		$(".check.module").on("click","li",function  () {
+			$(this).addClass("active");
+			$(this).siblings().removeClass("active");
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/commonFn.js" type="text/javascript" charset="utf-8"></script>
+    
+    
+	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="js/pageJs/verification.js"></script>
+	<script src="js/getToken.js" type="text/javascript" charset="utf-8"></script>
+	 
+	<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">查看详情</h1>
+	</header>
+	<div class="mui-content" style="background: #F6F8F4;">
+		<div class="module">
+			<ul class="detailInfo">
+				<li style="font-size: 14px;">
+					<b class="green justify">检修员</b>
+					<b id="jianxiuyuan"></b>
+				</li>
+				<li>
+					<b class="green justify">设定时间</b>
+					<b id="shedingshijian"></b>
+				</li>
+				<li>
+					<b class="green justify">现场名称</b>
+					<b id="xianchangmingcheng"></b>
+					<b></b>
+				</li>
+			</ul>
+		</div>
+		<!--弹窗-->
+		<div class="window">
+			<div class="dialog">
+				<p class="green">备注：</p>
+				<div class="txtBox">
+					<textarea id="textareaInf"></textarea>
+					<span>
+						<span>0</span>
+						<span>/</span>
+						<span>500</span>
+					</span>
+				</div>
+				<div class="btnBox">
+					<button class="g" onclick="modifyMemo(this)" id="changeButtonStatus">修改</button>
+					<button class="gray" onclick="closeMemo(this)">关闭</button>
+				</div>
+			</div>
+		</div>
+		<div class="module" >
+	    	<table class="state dataTable active" border="1">
+	    		<h3 class="dataTitle">校验记录表</h3>
+	    		<thead>
+	    			<tr>
+	    				<th>校验位置</th>
+	    				<th>部件</th>
+	    				<th>校验内容</th>
+	    				<th>校验方法</th>
+	    				<th>校验基准 （标准）</th>
+	    				<th>校验状态</th>
+	    			</tr>
+	    		</thead>
+	    		<tbody id="tbody">
+	    			<tr>
+	    				<td>烟尘</td>
+	    				<td></td>
+	    				<td></td>
+	    				<td>仪器校验检测</td>
+	    				<td>通过</td>
+	    				<td>通过</td>
+	    			</tr>
+	    			<tr>
+	    				<td>O2含量</td>
+	    				<td></td>
+	    				<td>仪器校验检测</td>
+	    				<td></td>
+	    				<td></td>
+	    			</tr>
+	    		</tbody>
+	    	</table>
+		</div>
+		<div class="module">
+			<div class="btnBox">
+				<button class="g" id="sumbit" onclick="sumbitInfo()">提交</button>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+//		弹窗事件
+		function windowFilp (box,call1,call2) {
+			$(".dataTable .radius:not(.disable)").on("click",function  () {
+				$(box).show();
+				fn(null,$(".txtBox").find("textarea"));
+			});
+			$(".btnBox button.g",$(box)).click(function  () {
+				$(box).hide();
+				if(call1 instanceof Function) call1();
+			});
+			$(".btnBox button.gray",$(box)).click(function  () {
+				$(box).hide();
+				if(call2 instanceof Function) call2();
+			});
+		}
+		windowFilp(".window",function  () {
+//			修改按钮回调
+		},function  () {
+//			关闭回调
+		});
+//		开关按钮
+		$(".kg").click(function  () {
+			if($(this).hasClass("on")){
+				$(this).removeClass("on").addClass("off");
+			}else{
+				$(this).removeClass("off").addClass("on");
+			}
+		});
+	</script>
+</body>
+</html>

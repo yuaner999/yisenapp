@@ -1,0 +1,61 @@
+body{
+    background: url(../images/login_02.jpg) center no-repeat;
+    background-size: cover;
+}
+body,html{
+    height: 100%;
+}
+.form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 76%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    &>div{
+        height: 42px;
+        line-height: 41px;
+        position: relative;
+        .icon.user{
+            width: 15.5px;
+            height: 17px;
+            background-position: 0 -88.5px;
+            position: absolute;
+            left: 7px;
+            top: 11px;
+        }
+        .icon.pass{
+            width: 13px;
+            height: 17px;
+            background-position: 0 -16.5px;
+            position: absolute;
+            left: 0;
+            left: 8.5px;
+            top: 11px;
+        }
+        input{
+            padding: 0;
+            padding-left: 30px;
+            border: 0;
+            border-bottom: 1px solid #bdbdbd;
+        }
+        .inline-block{
+            margin-right: 10%;
+            span{
+                display: block;
+            }
+        }
+    }
+    button{
+        display: block;
+        height: 42px;
+        width: 100%;
+        margin-top: 20px;
+        background: #1fc482;
+        border: 0;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+}

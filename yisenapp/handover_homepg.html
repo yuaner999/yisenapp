@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/commonFn.js"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="js/handover_homepage.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="layer/layer.js"></script>
+		<script type="text/javascript" src="js/getToken.js"></script>
+		<script type="text/javascript" src="js/jquery.md5.js"></script>
+		<script type="text/javascript" src="js/pageJs/handover_pg.js"></script>
+		<style>
+			.dataTable .kg+ * {
+				display: inline-block;
+				width: 37px;
+				height: 18px;
+				border-radius: 1000px;
+				vertical-align: middle;
+				line-height: 16px;
+				border: 1px solid #1FC482;
+				font-size: 12px;
+				text-align: center;
+				background: transparent;
+				color: #1FC482;
+				transition: .2s all;
+				-webkit-transition: .2s all;
+			}
+		</style>
+		<script>
+			//让其下内容显示或者关闭
+			function showTable(e) {
+				$(e).next().toggle();
+				$(e).parent().next().toggle();
+			}
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" onclick="tiaozhuan()"></a>
+			<h1 class="mui-title">接班详情</h1>
+		</header>
+		<div class="mui-content" style="background: #F6F8F4;">
+			<div class="module">
+				<ul class="detailInfo">
+					<li>
+						<b class="yellow">现场</b>
+						<b id='scene_name'></b>
+					</li>
+					<li>
+						<b class="green">巡检人</b>
+						<span id='handover_man_before'></span>
+					</li>
+					<li>
+						<b class="green">交接状态</b>
+						<span id='handover_status'></span>
+					</li>
+				</ul>
+			</div>
+			<div class="module">
+				<table class="state dataTable active" border="1">
+					<h3 class="dataTitle">接班记录表</h3>
+					<thead>
+						<tr>
+							<th colspan="2">设备名称</th>
+							<th>交接情况</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td hidden="true">加载中...</td>
+							<td hidden="true">加载中...</td>
+							<td>加载中...</td>
+							<td>加载中...</td>
+							<td>
+								<div class="kg"><i class="icon"></i></div>
+								<span class="radius">备注</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+		<div class="module">
+			<div class="btnBox">
+				<button class="g" id="sumbit" onclick="sumbitInfo()">提交</button>
+			</div>
+		</div>
+		<!--弹窗-->
+
+		</div>
+
+		<div class="window">
+			<div class="dialog">
+				<p class="green">备注：</p>
+				<div class="txtBox">
+					<textarea></textarea>
+					<span>
+						<span>0</span>
+					<span>/</span>
+					<span>500</span>
+					</span>
+				</div>
+				<div class="btnBox">
+					<button class="g" id='updateMemo'>修改</button>
+					<button class="gray">关闭</button>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function tiaozhuan() {
+				//  window.history.back(-1);
+				window.location.href = "handover_info.html?message_scene=" + message_scene + "&taskBack=taskBack";
+			}
+			//弹窗事件
+			function windowFilp(txt, box, call1, call2) {
+				//				$(".dataTable .radius:not(.disable)").off("click");
+				//				$(".dataTable .radius:not(.disable)").on("click", function() {
+				$(box).show();
+				fn(null, $(".txtBox").find("textarea"));
+				//				});
+				$(".btnBox button.g", $(box)).off("click");
+				$(".btnBox button.g", $(box)).click(function() {
+					$(box).hide();
+					if(call1 instanceof Function) call1();
+				});
+				$(".btnBox button.gray", $(box)).off("click");
+				$(".btnBox button.gray", $(box)).click(function() {
+					$(box).hide();
+					if(call2 instanceof Function) call2();
+				});
+			}
+		</script>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/mui_push2.js"></script>
+
+</html>

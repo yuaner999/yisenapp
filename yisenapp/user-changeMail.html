@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/form.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/pageJs/ModifyEmail.js"></script>
+		<script src="js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/getToken.js" type="text/javascript" charset="utf-8"></script>
+
+		<style>
+			element.style {
+				z-index: 19891022;
+				top: 297.5px;
+				left: 55px;
+			}
+			
+		</style>
+
+	</head>
+
+	<body>
+		<!--<div class="layui-layer layui-anim layui-layer-dialog layui-layer-border layui-layer-msg layui-layer-hui" id="layui-layer13" type="dialog" times="13" showtime="3000" contype="string" style="z-index: 19891027; top: 297.5px; left: 55px;">
+		<div class="layui-layer-content">邮箱格式不正确，请重新输入邮箱</div><span class="layui-layer-setwin"></span></div>-->
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">修改邮箱</h1>
+		</header>
+		<div class="mui-content">
+			<div class="form">
+				<div class="formRow">
+					<input type="text" placeholder="请输入您的新邮箱" name="mail" id="email" />
+					<i class="icon"></i>
+				</div>
+				<button class="userExit" id="changeMail">确认</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(".formRow .icon").click(function() {
+				$(this).prev().val("");
+			});
+		</script>
+	</body>
+
+</html>

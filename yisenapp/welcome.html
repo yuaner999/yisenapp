@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>轮播广告</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper-3.4.2.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<!--是否是导航页退出appjs-->
+		<script src="js/appExit.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.banner{
+				width: 100%;
+				height: 100%;
+			}
+			.banner a img{
+				width: 100%;
+				min-height: 100%;
+			}
+			body,html{
+				height: 100%;
+				background: #fff;
+			}
+			.swiper-pagination-bullet{
+				background: #fff;
+				opacity: .4;
+			}
+			.swiper-pagination-bullet-active{
+				background: #fff;
+				opacity: 1;
+			}
+			.pass{
+				position: fixed;
+				background: rgba(100,100,100,.7);
+				right: 20px;
+				top: 30px;
+				font-size: 17px;
+				color: #fff;
+				border-radius: 50px;
+				padding: 3px 15px;
+				z-index: 2;
+				overflow: hidden;
+			}
+			.pass span{
+				float: left;
+			}
+			.pass span:first-of-type{
+				
+			}
+			.pass span:last-of-type{
+				border-left: 2px solid #ccc;
+				padding-left: 5px;
+				margin-left: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pass">
+			<span>6</span>
+			<span>跳过</span>
+		</div>
+		<div class="banner swiper-container">
+			<div class="swiper-wrapper">
+				<a id="pic1href" onclick="openUrl('http://www.baidu.com')" class="swiper-slide">
+					<img id="pic1" src="images/login_02.jpg"/>
+				</a>
+				<a id="pic2href" onclick="openUrl('http://www.baidu.com')" class="swiper-slide">
+					<img id="pic2" src="images/login_02.jpg"/>
+				</a>
+				<a id="pic3href" onclick="openUrl('http://www.baidu.com')" class="swiper-slide">
+					<img id="pic3" src="images/login_02.jpg"/>
+				</a>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<script type="text/javascript">
+		    var swiper = new Swiper('.swiper-container', {
+		        pagination: '.swiper-pagination',
+		        paginationClickable: true,
+//		        autoplay: 2000
+		    });
+		    $(function  () {
+		    	var ajax = $.ajax({
+					type: "post",
+					url: url + "/handler/Login.asmx/GetAdsPicture?jsoncallback?",
+					dataType: "jsonp",
+					jsonp: 'jsoncallback',
+					async:false,
+					data: {
+						
+					},
+					timeout: 30000,
+					success: function(data) {
+						if(data.status=="0"){
+							location.href="Login.html";
+						}else
+						{
+							var json = eval("(" + data.result + ")");
+							$("#pic1href").attr("onclick","openUrl('"+json[0].ads1url+"')");
+							$("#pic1").attr("src",json[0].ads1picture);
+							$("#pic2href").attr("onclick","openUrl('"+json[0].ads2url+"')");
+							$("#pic2").attr("src",json[0].ads2picture);
+							$("#pic3href").attr("onclick","openUrl('"+json[0].ads3url+"')");
+							$("#pic3").attr("src",json[0].ads3picture);
+						}
+					},
+					error: function(data) {
+						location.href="Login.html";
+					},
+					complete: function(XMLHttpRequest, status) {
+						if (status == 'timeout') { //超时,status还有success,error等值的情况
+							ajax.abort(); //取消请求
+							location.href="Login.html";
+						}
+					}
+				});
+	    	});
+	    	window.onload = function() { 
+		    	var c=0,t=6;
+		    	beginTimer();
+		    	var timer=setInterval(function  () {
+		    		c++;
+		    		swiper.slideNext();
+		    		if(c==2){
+		    			clearInterval(timer);
+		    		}
+		    	},2000);
+		    	function beginTimer () {
+		    		var ele=$(".pass");
+		    		var timer=setInterval(function  () {
+		    			t--;
+			    		ele.find("span:first").text(t);
+			    		if(t==0){
+			    			clearInterval(timer);
+			    			setTimeout(function () {
+			    				jump();
+			    			},500);
+			    		}
+		    		},1000);
+		    	}
+		    	$(".pass").click(jump);
+		    }; 
+		    function jump () {
+				location.href="Login.html";
+		    }
+		    function openUrl(urll){
+		    	plus.runtime.openURL(urll);
+		    }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/inform.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="js/pageJs/ModifyPwd.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/getToken.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/nav.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/Report.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/checkMessageStatus.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/checkMessageStatus2.js" type="text/javascript" charset="utf-8"></script>
+		<!--日期js-->
+		<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="workControl.html"></a>
+			<h1 class="mui-title">报警</h1>
+			<!--<h1 class="mui-title"><br />
+	    	<i class="icon date"></i>
+	    	<a></a>
+	    </h1>-->
+		</header>
+		<!--内容-->
+		<div class="mui-content">
+			<!--tab切换-->
+			<div class="module tab">
+				<a class="active" id="lv1">一级</a>
+				<a id="lv2">二级</a>
+				<a id="lv3">三级</a>
+			</div>
+			<div class="module">
+				<p class="filterTitle">筛选</p>
+				<div class="selfSelect">
+					<select name="" id="select_scene" onchange="changeScene(this)">
+						<option value="">请选择现场</option>
+					</select>
+				</div>
+			</div>
+			<!--消息列表-->
+			<div class="box">
+				<!--各种状态的信息-->
+				<!--<div class="infoItem">
+	    		<p>
+	    			<mark>一级报警</mark>
+	    			<span class="right">
+	    				<span>2017/2/21</span> 
+	    				<span>16:18:00</span> 
+	    			</span>
+	    		</p>
+	    		<div class="info">
+	    			<b class="yellow">现场</b>
+	    			<b>沈阳减法锅炉房</b>
+	    			<span class="yellow right">处理中</span>
+	    		</div>
+	    		<ul>
+	    			<li>
+	    				<span>设备名称</span>
+	    				<span>呵呵</span>
+	    			</li>
+	    			<li>
+	    				<span>部件名称</span>
+	    				<span>哈哈</span>
+	    			</li>
+	    			<li>
+	    				<span>报警值</span>
+	    				<span>哈哈</span>
+	    			</li>
+	    		</ul>
+	    		<div class="btnBox">
+	    			<button class="blockBox g">发起报修</button>
+	    			<button class="blockBox b">故障分析</button>
+	    		</div>
+	    	</div>-->
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//		TAB切换
+			$(".module.tab a").click(function() {
+				$(this).addClass("active");
+				$(this).siblings().removeClass("active");
+			});
+			////		封装好的选择日期绑定
+			////		该日期是android原生日期框,需要在手机运行
+			//		chooseDate({
+			//			ele:".mui-title a",//触发日期弹窗的按钮
+			//			now:"2016-08-19",//可以写auto 为目前时间
+			//			minDate:"2010-01-03",//最小日期
+			//			maxDate:"2018-01-03"//最大日期
+			//		},function  (nowDate) {
+			//			console.log(nowDate);
+			//			//回调函数
+			//		});
+			mui.back = function() {
+				location.href = 'workControl.html';
+			}
+		</script>
+		</script>
+	</body>
+
+</html>

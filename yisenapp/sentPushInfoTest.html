@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title><br />
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+	</head>
+	<style>
+		input {
+		    width: 100px;
+		    /* padding-bottom: 56px; */
+		    height: 50px;
+		    margin-bottom: 50px;
+		    margin-left: 50px;
+			}
+	</style>
+	<script type="text/javascript">
+		var url = "http://192.168.27.110";
+		var url1 = "";
+		function pushmessage(i){
+//			console.log(typeof i);//number
+			if(i==1){
+				url1="/handler/Message.asmx/sentCheckMessage?jsoncallback?";
+			}else if(i==2){
+				url1="/handler/Message.asmx/sentHandoverMessage?jsoncallback?";
+			}else if(i==3){
+				url1="/handler/Message.asmx/sentHandover2Message?jsoncallback?";
+			}else if(i==4){
+				url1="/handler/Message.asmx/sentMaintainMessage?jsoncallback?";
+			}else if(i==5){
+				url1="/handler/Message.asmx/sentRepairMessage?jsoncallback?";
+			}
+			console.log(111);
+			$.ajax({
+				type:"post",
+				url:url+url1,
+				dataType:"jsonp",
+				jsonp: 'jsoncallback',
+				success:function(data){
+					console.log(data.result);
+					console.log("触发成功");
+					console.log(222);
+				}
+			})
+		}
+		
+		
+	</script>
+	<body>
+		<!--<button value="发送巡检信息"></button>
+		<button value="发送交班信息"></button>
+		<button value="发送接班信息"></button>
+		<button value="发送保养信息"></button>
+		<button value="发送报修信息"></button>-->
+		<input type="button" value="发送巡检信息" onclick="pushmessage(1)"/><br>
+		<input type="button" value="发送交班信息" onclick="pushmessage(2)"/></br>
+		<input type="button" value="发送接班信息" onclick="pushmessage(3)"/></br>
+		<input type="button" value="发送保养信息" onclick="pushmessage(4)"/></br>
+		<input type="button" value="发送报修信息" onclick="pushmessage(5)"/></br>
+		
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/ModifyPwd.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script src="js/getToken.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/pageJs/ModControlPwd.js"></script>
+		<script type="text/javascript" src="js/jquery.md5.js"></script>
+		<style>
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+			.right{
+				color:  #1fc482;
+				font-size: 0.85em;
+				margin-top: -20px;
+			}
+			.right .wh {
+				background: url(images/en_03.png);
+				width: 14px;
+				height: 14px;
+				background-size: 100% 100%;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">控制密码</h1>
+		</header>
+		<div class="mui-content">
+			<div class="form">
+				<div class="formRow">
+					<input type="password" placeholder="请输入您的旧密码" name="mail" id="opwd" value="" maxlength="6" />
+					<i class="icon"></i>
+				</div>
+				<div class="formRow">
+					<input type="password" placeholder="请输入您的新密码(最多可输入6位)" name="mail" id="npwd1" value="" maxlength="6" />
+					<i class="icon"></i>
+				</div>
+				<div class="formRow">
+					<input type="password" placeholder="再次请输入您的新密码(最多可输入6位)" name="mail" id="npwd2" value="" maxlength="6" />
+					<i class="icon"></i>
+				</div>
+				<button class="userExit" id="submit">确认</button>
+				<div class="right">
+					<a href="forgetControlPwdModify.html">
+						<i class="wh"></i>
+						<span>忘记密码</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(".formRow .icon").click(function() {
+				$(this).prev().val("");
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,326 @@
+body {
+  height: auto!important;
+}
+.content {
+  width: 16.200000000000003rem;
+  margin: 1.2000000000000002rem auto 0;
+}
+.head {
+  overflow: hidden;
+}
+.head ul {
+  border: 0.07500000000000001rem solid #e1e5dc;
+  border-radius: 0.75rem;
+  padding: 0 0.625rem;
+  width: 16.200000000000003rem;
+  margin: 0 auto;
+  position: relative;
+}
+.head ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.head ul li {
+  float: left;
+  height: 1.25rem;
+  font-size: 0.7000000000000001rem;
+  width: 4.925000000000001rem;
+  line-height: 1.25rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  color: #017d7b;
+}
+.head ul li:last-child {
+  position: absolute;
+  top: -0.07500000000000001rem;
+  left: -0.07500000000000001rem;
+  border-radius: 0.75rem;
+  width: 6.3500000000000005rem;
+  background: #017d7b;
+  height: 1.4000000000000001rem;
+  z-index: 0;
+}
+.head ul li:first-child {
+  color: #fff;
+}
+.head div {
+  border: 1px solid #45c2bc;
+  border-radius: 0.325rem;
+  font-size: 0.5rem;
+  color: #45c2bc;
+  float: right;
+  padding: 0.07500000000000001rem 0.325rem 0.1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.9rem;
+}
+.head div span {
+  display: inline-block;
+}
+.head div img {
+  width: 0.47500000000000003rem;
+  height: 0.55rem;
+  vertical-align: middle;
+}
+.list {
+  margin-bottom: 4.25rem;
+}
+.list > li {
+  border: 1px solid #97c0bf;
+  padding: 1rem 0.775rem 0;
+  border-radius: 0.375rem;
+  margin-bottom: 0.9750000000000001rem;
+}
+.list > li p {
+  border-bottom: 1px solid #017d7b;
+  overflow: hidden;
+  padding-bottom: 0.625rem;
+}
+.list > li p img {
+  width: 2.225rem;
+  height: 1.8250000000000002rem;
+}
+.list > li p span {
+  float: right;
+  width: 11.5rem;
+  font-size: 0.65rem;
+  color: #017d7b;
+  line-height: 0.9500000000000001rem;
+  /*多行文本溢出省略号*/
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.list > li div {
+  margin-top: 0.2rem;
+  font-size: 0.65rem;
+  color: #017d7b;
+  padding-bottom: 0.2rem;
+}
+.list > li div span {
+  font-size: 0.6rem;
+  display: inline-block;
+  /*margin-top: 0.4rem;*/
+}
+.list > li div ol {
+  float: right;
+}
+.list > li div ol li {
+  padding: 0 0.30000000000000004rem 0 0.625rem;
+  float: left;
+  font-size: 0.55rem;
+  color: #45c2bc;
+  height: 1rem;
+  line-height: 1rem;
+  border-radius: 0.25rem;
+  letter-spacing: 0.325rem;
+  margin-left: 0.625rem;
+}
+.list > li div ol li.btn {
+  background: #45c2bc;
+  color: #fff;
+  border: 1px solid #45c2bc;
+}
+.black {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.4;
+  background: #535353;
+  z-index: 333333333333;
+  display: none;
+}
+.window {
+  display: none;
+  z-index: 99999999999999;
+  position: fixed;
+  top: 30vh;
+  left: 1.2750000000000001rem;
+  background: #fff;
+  width: 16.200000000000003rem;
+  text-align: center;
+}
+.window p {
+  text-align: center;
+  color: #017d7b;
+  font-size: 0.8rem;
+  margin-top: 1.675rem;
+  margin-bottom: 1.6rem;
+}
+.window div {
+  display: inline-block;
+  margin-bottom: 1.6rem;
+}
+.window div button {
+  padding: 0.25rem 1.675rem;
+  border: 1px solid #97c0bf;
+  border-radius: 0.325rem;
+  font-size: 0.7000000000000001rem;
+  color: #017d7b;
+}
+.window div button:first-child {
+  color: #fff;
+  background: #017d7b;
+}
+.ani {
+  animation: myfirst 0.2s forwards;
+  -moz-animation: myfirst 0.2s forwards;
+  /* Firefox */
+
+  -webkit-animation: myfirst 0.2s forwards;
+  /* Safari 和 Chrome */
+
+  -o-animation: myfirst 0.2s forwards;
+  /* Opera */
+
+}
+.end {
+  animation: mysecound 0.2s forwards;
+  -moz-animation: mysecound 0.2s forwards;
+  /* Firefox */
+
+  -webkit-animation: mysecound 0.2s forwards;
+  /* Safari 和 Chrome */
+
+  -o-animation: mysecound 0.2s forwards;
+  /* Opera */
+
+}
+@keyframes myfirst {
+  from {
+  color: #017d7b;
+}
+to {
+  color: #fff;
+}
+
+}
+@-moz-keyframes myfirst /* Firefox */ {
+  from {
+  color: #017d7b;
+}
+to {
+  color: #fff;
+}
+
+}
+@-webkit-keyframes myfirst /* Safari 和 Chrome */ {
+  from {
+  color: #017d7b;
+}
+to {
+  color: #fff;
+}
+
+}
+@-o-keyframes myfirst /* Opera */ {
+  from {
+  color: #017d7b;
+}
+to {
+  color: #fff;
+}
+
+}
+@keyframes mysecound {
+  from {
+  color: #fff;
+}
+to {
+  color: #017d7b;
+}
+
+}
+@-moz-keyframes mysecound /* Firefox */ {
+  from {
+  color: #fff;
+}
+to {
+  color: #017d7b;
+}
+
+}
+@-webkit-keyframes mysecound /* Safari 和 Chrome */ {
+  from {
+  color: #fff;
+}
+to {
+  color: #017d7b;
+}
+
+}
+@-o-keyframes mysecound /* Opera */ {
+  from {
+  color: #fff;
+}
+to {
+  color: #017d7b;
+}
+
+}
+.twofont {
+  letter-spacing: 0.05rem !important;
+  padding: 0 0.30000000000000004rem 0 0.30000000000000004rem !important;
+}
+.list {
+  margin-top: 1rem;
+}
+.list > li .btnn,
+.list > li .btnn1 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0.6rem 0;
+    height: 1.4rem;
+}
+.list > li .btnn a:first-of-type,
+.list > li .btnn1 a:first-of-type{
+ /* position: relative;*/
+  background: #017d7b;
+  letter-spacing: 0.025rem;
+  color: #fff;
+  padding: 0.125rem 0.325rem;
+  color: #fff;
+  float: left;
+  border-radius: 0.25rem;
+}
+.list > li .btnn > a:nth-of-type(2),
+.list > li .btnn1 > a:nth-of-type(2) {
+  background: #017d7b;
+  letter-spacing: 0.025rem;
+  color: #fff;
+  padding: 0.125rem 0.325rem;
+  color: #fff;
+  float: right;
+  border-radius: 0.25rem;
+}
+.list > li .btnn a:active,.list > li .btnn1 a:active{
+		background: #006563;
+}
+.nextpage {
+  color: #017d7b;
+  font-size: 0.55rem;
+  border: 0.07500000000000001rem solid #97c0bf;
+  padding: 0.25rem;
+  text-align: center;
+  width: 16.200000000000003rem;
+  border-radius: 0.375rem;
+  -webkit-border-radius: 0.375rem;
+  -moz-border-radius: 0.375rem;
+}
+.nextpage:hover{
+}
+.layui-layer-loading {
+  width: 100% !important;
+  left: 0 !important;
+  text-align: center;
+}
+.layui-layer-loading > div {
+  display: inline-block;
+}

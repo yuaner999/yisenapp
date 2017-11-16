@@ -1,0 +1,99 @@
+.userPhoto {
+  width: 100px;
+  height: 100px;
+  margin: 25px auto;
+}
+.module {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.infoRow {
+  background: #fff;
+  margin-bottom: 4.5px;
+  padding: 0 15px;
+  line-height: 55px;
+}
+.infoRow > * {
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+.infoRow > *:first-child {
+  border-bottom: 1px solid #BDBDBD;
+}
+.infoRow > *:last-child {
+  border-bottom: none;
+}
+.infoRow > * .inline-block {
+  width: 18px;
+  text-align: center;
+  margin-right: 20px;
+}
+.infoRow > * .right {
+  padding-right: 30px;
+}
+.infoRow > * .icon {
+  background: url(../images/userIcon.png);
+  background-size: 17.5px 119.5px;
+  vertical-align: middle;
+}
+.infoRow > * .icon.user {
+  background-position: 0 -66.5px;
+  width: 17px;
+  height: 18px;
+}
+.infoRow > * .icon.mail {
+  width: 17px;
+  height: 13px;
+  background-position: 0 -53px;
+}
+.infoRow > * .icon.phone {
+  width: 16px;
+  height: 19px;
+  background-position: 0 0;
+}
+.infoRow > * .icon.localName {
+  width: 17px;
+  height: 17px;
+  background-position: 0 -85px;
+}
+.infoRow > * .icon.pass {
+  width: 16px;
+  height: 18px;
+  background-position: 0 -34px;
+}
+.infoRow > * .icon.offiPhone {
+  width: 16px;
+  height: 15px;
+  background-position: 0 -19px;
+}
+.infoRow > * .icon.version {
+  width: 17.5px;
+  height: 17.5px;
+  background-position: 0 -102px;
+}
+.infoRow a .right {
+  position: relative;
+}
+.infoRow a .right:after {
+  content: '';
+  position: absolute;
+  border-bottom: 2px solid #1FC482;
+  border-right: 2px solid #1FC482;
+  width: 12px;
+  height: 12px;
+  top: 20.5px;
+  right: 4px;
+  -webkit-transform: rotate(-45deg);
+}
+button.userExit {
+  width: 100%;
+  display: block;
+  background: #1FC482;
+  border: 0;
+  border-radius: 0;
+  color: #FFFFFF;
+  height: 42px;
+  margin: 30px 0;
+}
+/*# sourceMappingURL=user.css.map */

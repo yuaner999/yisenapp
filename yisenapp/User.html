@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/user.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/User.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/getToken.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/checkMessageStatus.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/checkMessageStatus2.js" type="text/javascript" charset="utf-8"></script>
+		<!--是否是导航页退出appjs-->
+		<script src="js/appExit.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/ajaxfileupload.js" type="text/javascript" charset="utf-8"></script>
+
+		<style>
+			.userPhoto{
+				margin-bottom: 26px;
+				border-radius: 50%;
+				height: 102px;
+				width: 102px;
+				overflow: hidden;
+			}
+			.userPhoto img {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">用户中心</h1>
+		</header>
+		<!--底部tab-->
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="homepage.html">
+				<span class="mui-icon data"></span>
+				<span class="mui-tab-label">数据监控</span>
+			</a>
+			<a class="mui-tab-item" href="workControl.html" ,>
+				<span class="mui-icon app"></span>
+				<span class="mui-tab-label">全部应用</span>
+				<span class="mui-badge" id="workControl"></span>
+			</a>
+			<a class="mui-tab-item" href="message_info.html">
+				<span class="mui-icon info"></span>
+				<span class="mui-tab-label">消息</span>
+				<span class="mui-badge" id="message"></span>
+			</a>
+			<a class="mui-tab-item mui-active" href="User.html">
+				<span class="mui-icon user"></span>
+				<span class="mui-tab-label">用户中心</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<div class="module">
+				<div class="userPhoto">
+					<input type="file" name="pic" id="btn_file" style="display: none;" onchange="upload()" accept="image/png,image/gif,image/bmp,image/jpg,image/jpeg">
+					<img id='emp_photo' src="images/usercenter_03.png" />
+				</div>
+			</div>
+			<div class="infoRow">
+				<!--如果是a标签则当前行具有进入的图标，说明能点击进入-->
+				<!--如果是div就没有 进不去-->
+				<div>
+					<div class="inline-block">
+						<i class="icon user"></i>
+					</div>
+					<span>用户名</span>
+					<span class="right" id="emp_name"></span>
+				</div>
+				<a href="user-changeMail.html">
+					<div class="inline-block">
+						<i class="icon mail"></i>
+					</div>
+					<span>邮箱</span>
+					<span class="right" id="emp_email"></span>
+				</a>
+			</div>
+			<div class="infoRow">
+				<!--如果是a标签则当前行具有进入的图标，说明能点击进入-->
+				<!--如果是div就没有 进不去-->
+				<a href="user-changePhone.html">
+					<div class="inline-block">
+						<i class="icon phone"></i>
+					</div>
+					<span>手机</span>
+					<span class="right" id="emp_phone"></span>
+				</a>
+				<div>
+					<div class="inline-block">
+						<i class="icon localName"></i>
+					</div>
+					<span>现场名称</span>
+					<span class="right" id="scene_name"></span>
+				</div>
+			</div>
+			<div class="infoRow">
+				<!--如果是a标签则当前行具有进入的图标，说明能点击进入-->
+				<!--如果是div就没有 进不去-->
+				<a href="user-changePass.html">
+					<div class="inline-block">
+						<i class="icon pass"></i>
+					</div>
+					<span>密码</span>
+					<span class="right" id="emp_post"></span>
+				</a>
+				<a href="ModControlPwd.html">
+					<div class="inline-block">
+						<i class="icon pass"></i>
+					</div>
+					<span>控制密码</span>
+					<span class="right" id="ModControlPwd"></span>
+				</a>
+				
+			</div>
+			<div class="infoRow">
+				<a href="tel:13840277461">
+					<div class="inline-block">
+						<i class="icon offiPhone"></i>
+					</div>
+					<span>客服电话</span>
+					<span class="right">13840277461(栾先生)</span>
+				</a>
+				<a href="javascript:void(0)" onclick="CheckUpdate()">
+					<div class="inline-block">
+						<i class="icon version"></i>
+					</div>
+					<span>当前版本</span>
+					<span class="right">1.0.28</span>
+				</a>
+			</div>
+			<div class="module">
+				<button class="userExit" onclick="Exit()">退出登录</button>
+			</div>
+		</div>
+		<script>
+			mui.ready(function() {
+				mui('nav').on('tap', 'a', function() {
+					document.location.href = this.href;
+				});
+
+				document.getElementById('emp_photo').addEventListener('click', function(e) {
+					document.getElementById('btn_file').click();
+				})
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/inform.css"/>
+    <!--日期js-->
+    <script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script src="js/getToken.js" type="text/javascript" charset="utf-8"></script>
+	<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+	 
+	<script src="js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pageJs/orderTime.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+    	.setTime._2 div{
+    		width: 100%;
+    	}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">推迟到达的时间</h1>
+	</header>
+	<!--内容-->
+	<div class="mui-content">
+		<div class="module">
+		    <div class="setTime _2">
+				<div>
+					<i class="icon"></i>
+					<span id="startDate"></span>
+				</div>
+		    </div>
+		</div>
+		<div class="module" id="buttonDom">
+			<div class="btnBox">
+				<button class="g" onclick="orderTime()" id="btn">确定</button>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+//		封装好的选择日期绑定
+//		该日期是android原生日期框,需要在手机运行
+		//选择日期
+		chooseDate({
+			ele:".setTime div ",//触发日期弹窗的按钮
+			now:"auto",//可以写auto 为目前时间
+			minDate:"2010-01-03",//最小日期
+			maxDate:"2028-01-03"//最大日期
+		},function  (nowDate) {
+			if(nowDate < new Date()) {
+					$("#btn").attr("disabled",true);
+					layer.msg("请选择正确的时间顺序");
+					return;
+			}
+			$("#btn").attr("disabled",false);
+//			//回调函数
+//			var newDate = JSON.stringify(nowDate);
+//			//回调函数
+//			var reg = new RegExp('"',"g");  
+//			newDate = newDate.replace(reg, "").substring(0,newDate.indexOf("T")-1);
+//			now = now.toString();
+//			if(now<newDate)
+//			$("#startDate").html(newDate);
+		},true);
+	</script>
+	<script src="js/pageJs/orderTimeDate.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui_push2.js"></script>
+</body>
+</html>

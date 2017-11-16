@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="css/inform.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript" src="js/getToken.js"></script>
+		<script type="text/javascript" src="layer/layer.js"></script>
+		<script type="text/javascript" src="js/jquery.md5.js"></script>
+		<script src="laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/sendNewRepair.js" type="text/javascript" charset="utf-8"></script>
+		<!--日期js-->
+		<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.info .itemInfo .left+ input {
+				display: block;
+				margin-top: 45px;
+				border: 1px solid #1FC482;
+				border-radius: 0;
+			}
+			
+			.panel {
+				display: none;
+			}
+			
+			.panel.active {
+				display: block;
+			}
+			
+			.setTime._2 {
+				margin-top: 35px;
+			}
+			
+			.setTime._2 div {
+				width: 100%;
+			}
+			input {
+				padding: 0 7px;
+				margin: 0;
+				width: 100%;
+				border: 1px solid #bdbdbd !important;
+				height: 100%;
+				border-radius: 0;
+				background: transparent;
+				position: relative;
+				z-index: 1;
+				outline: none;
+				
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" onclick="tiaozhuan()"></a>
+			<h1 class="mui-title">发起报修</h1>
+		</header>
+		<div class="mui-content">
+			<div class="panel active">
+				<div class="repeatSele">
+					<h3>维修人员：</h3>
+					<!--禁用的下拉-->
+					<div class="selfSelect disable">
+						<input id="respons" value="" readonly="readonly" />
+					</div>
+				</div>
+				<div class="repeatSele">
+					<h3>维修现场：</h3>
+					<div class="selfSelect">
+						<select onchange="loadEquipment(this)">
+							<option value="">现场加载中...</option>
+						</select>
+					</div>
+				</div>
+				<div class="repeatSele">
+					<h3>维修设备：</h3>
+					<div class="selfSelect">
+						<select onchange="loadComponent(this)">
+							<option value="">等待选择现场</option>
+						</select>
+					</div>
+				</div>
+				<div class="repeatSele">
+					<h3>维修部件：</h3>
+					<div class="selfSelect">
+						<select>
+							<option value="">等待选择设备</option>
+						</select>
+					</div>
+				</div>
+				<div class="btnBox padding">
+					<button id="next" class="g" onclick="showDiv()">设定完毕</button>
+				</div>
+			</div>
+			<div class="panel">
+				<div class="info">
+					<div class="itemInfo">
+						<div class="left green spe"><b>预计到达时间：</b></div>
+						<div class="setTime _2">
+							<div>
+								<i class="icon"></i>
+								<span id="date"></span>
+							</div>
+						</div>
+					</div>
+					<div class="itemInfo">
+						<b class="left green justify">故障原因：</b>
+						<textarea></textarea>
+					</div>
+					<div class="itemInfo">
+						<div class="left green spe"><b>需要停止的关联部件：</b></div>
+						<ul class="checkboxBox" id="equ">
+							<!--<li>
+							<span>氢氧化物</span>
+						</li>
+						<li>
+							<span>氢氧化物</span>
+						</li>
+						<li>
+							<span>氢氧化物</span>
+						</li>-->
+						</ul>
+					</div>
+					<div class="itemInfo">
+						<b class="left green justify">解决方案：</b>
+						<textarea></textarea>
+					</div>
+				</div>
+				<!--提交按钮-->
+				<div class="btnBox padding">
+					<button id="submit" class="g" onclick="submit()">提交</button>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//		$("#next").click(function  () {
+			//			$(".panel").removeClass("active");
+			//			$(".panel:last").addClass("active");
+			//		});
+
+			//		封装好的选择日期绑定
+			//		该日期是android原生日期框,需要在手机运行
+			//选择日期
+			chooseDate({
+				ele: ".setTime div ", //触发日期弹窗的按钮
+				now: "auto", //可以写auto 为目前时间
+				minDate: "2010-01-01", //最小日期
+				maxDate: "2030-12-31" //最大日期
+			}, function(nowDate) {
+		
+				//回调函数
+			},true);
+		</script>
+	</body>
+
+</html>

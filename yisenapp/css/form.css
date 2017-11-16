@@ -1,0 +1,181 @@
+button.userExit {
+  width: 100%;
+  display: block;
+  background: #1FC482;
+  border: 0;
+  border-radius: 0;
+  color: #FFFFFF;
+  height: 42px;
+  margin: 30px 0;
+}
+body {
+  background: #fff;
+}
+.mui-content {
+  background: #fff;
+}
+.form {
+  padding: 0 15px;
+  padding-top: 62px;
+  position: relative;
+}
+.form.no-fixed {
+  padding-top: 0;
+}
+.form.no-fixed .formRow {
+  position: relative;
+  top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.formRow {
+  position: fixed;
+  background: #fff;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 0 15px;
+  padding-top: 10px;
+  margin-bottom: 0;
+}
+.formRow span {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  height: 100%;
+  line-height: 58px;
+}
+.formRow span + input {
+  padding-left: 58px;
+}
+.formRow ul {
+  display: none;
+  position: absolute;
+  width: 100%;
+  border: 1px solid #BDBDBD;
+  border-top: 0;
+  background: #fff;
+  z-index: 999;
+}
+.formRow ul li {
+  line-height: 37px;
+  padding: 0 10px;
+}
+.formRow input {
+  border: 0;
+  border-bottom: 1px solid #BDBDBD;
+  height: 42px;
+  margin-bottom: 0;
+  font-size: 14px;
+  padding-left: 3px;
+  padding-right: 50px;
+}
+.formRow input:focus ~ ul {
+  display: block;
+}
+.formRow .icon {
+  width: 15.5px;
+  height: 15px;
+  background-position: 0 -106px;
+  position: absolute;
+  top: 23.5px;
+  right: 15px;
+  z-index: 1;
+}
+.formRow .abs {
+  right: 0;
+  height: 28px;
+  top: 12px;
+  border: 0;
+  padding: 0;
+  background: #1FC482;
+  border-radius: 0;
+  padding: 0 13px;
+  z-index: 100;
+  color: #fff;
+}
+.sendBox {
+  position: fixed;
+  bottom: 0;
+  background: #f6f8f4;
+  width: 100%;
+  left: 0;
+  border-top: 1px solid #BDBDBD;
+  padding: 6px 15px;
+}
+.sendBox input {
+  margin: 0;
+  height: 30px;
+}
+.sendBox input:first-of-type {
+  border: 0;
+}
+.sendBox input:last-of-type {
+  position: absolute;
+  right: 15px;
+  bottom: 6px;
+  background: transparent;
+  border: 0;
+  color: #1FC482;
+}
+.sendBox input:last-of-type:active {
+  background: transparent;
+  color: #1FC482;
+  border: 0;
+}
+.record {
+  margin-top: 15px;
+  overflow: hidden;
+  padding-bottom: 65px;
+}
+.record .time {
+  width: 100%;
+  line-height: 44px;
+  margin: 0;
+  text-align: center;
+  color: #cecece;
+}
+.record .time + li {
+  margin-top: 0;
+}
+.record > * {
+  float: left;
+}
+.record li {
+  width: 70%;
+  line-height: 20px;
+  font-size: 12px;
+  padding: 20px 15px;
+  margin-top: 44px;
+  border-radius: 20px;
+  margin-left: 8px;
+  position: relative;
+}
+.record li:after {
+  content: "";
+  position: absolute;
+  border: 8px solid transparent;
+  border-right-color: #ebfaf5;
+  left: -16px;
+  top: 23px;
+  transform: scaleY(.6);
+  -webkit-transform: scaleY(.6);
+}
+.record li.your {
+  background: #ebfaf5;
+  color: #757575;
+}
+.record li.me {
+  float: right;
+  background: #1fc482;
+  color: #fff;
+  margin-right: 8px;
+}
+.record li.me:after {
+  right: -16px;
+  left: auto;
+  border-right-color: transparent;
+  border-left-color: #1fc482;
+}
+/*# sourceMappingURL=form.css.map */

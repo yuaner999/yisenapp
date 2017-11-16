@@ -1,0 +1,38 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "微软雅黑" !important;
+}
+a{
+	text-decoration: none;
+	color: #000000;
+}
+html{
+	font-size: 40px;
+	background: #fff;
+}
+ul,li,ol,dl,dt{
+	list-style: none;
+}
+img{
+	border: none;
+	outline-width:0px;
+	vertical-align: top;
+}
+input{
+	outline: none;
+}
+img.load{
+	background: url(../layer/skin/default/loading-1.gif) no-repeat center;
+}
+body{
+	display: none;
+}
+#laydate_box{
+	transform: scale(1.5);
+    left: 50% !important;
+    margin-left: -120px !important;
+}
+.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{
+	color: #017d7b !important;
+}

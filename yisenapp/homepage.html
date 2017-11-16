@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/data.css" />
+		<link rel="stylesheet" type="text/css" href="css/inform.css" />
+		<!--是否是导航页退出appjs-->
+		<script src="js/appExit.js" type="text/javascript" charset="utf-8"></script>
+		<script src="chart/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/commonFn.js" type="text/javascript" charset="utf-8"></script>
+		<!--日期js-->
+		<script type="text/javascript" src="js/common.js"></script>
+		<!--
+    	作者：宋健
+    	时间：2017年8月25日11:23:31
+    	描述：加载数据
+    	-->
+		<script src="js/pageJs/Scene.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/getToken.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/checkMessageStatus.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/checkMessageStatus2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/ModifyPwd.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.stop {
+				color: #FF5053;
+				#b5b5b5
+			}
+			
+			.end {
+				color: #b5b5b5;
+			}
+			
+			.start {
+				border: 1px solid #1FC482;
+				color: #1FC482;
+			}
+			
+			.msg_ok {
+				text-align: center;
+				height: 34px;
+				color: #1FC482;
+				font-size: 12px;
+				display: block;
+			}
+			
+			.msg {
+				text-align: center;
+				height: 34px;
+				color: #b5b5b5;
+				font-size: 12px;
+				display: block;
+			}
+			
+			.dataTableth {
+				width: 100px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a href="SelectScene.html"><span class="gray" style="color: #1fc482;">选择现场</span></a>
+			<h1 class="mui-title">数据监控</h1>
+			</h1>
+		</header>
+		<!--底部tab-->
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="homepage.html">
+				<span class="mui-icon data"></span>
+				<span class="mui-tab-label">数据监控</span>
+			</a>
+			<a class="mui-tab-item" href="workControl.html" ,>
+				<span class="mui-icon app"></span>
+				<span class="mui-tab-label">全部应用</span>
+				<span class="mui-badge" id="workControl"></span>
+			</a>
+			<a class="mui-tab-item" href="message_info.html">
+				<span class="mui-icon info"></span>
+				<span class="mui-tab-label">消息</span>
+				<span class="mui-badge" id="message"></span>
+			</a>
+			<a class="mui-tab-item" href="User.html">
+				<span class="mui-icon user"></span>
+				<span class="mui-tab-label">用户中心</span>
+			</a>
+		</nav>
+		<!--内容-->
+		<div class="mui-content">
+			<div class="banner">
+				<img src="images/shebeitu.jpg" onerror="javascript:this.src='images/shebeitu.jpg'" />
+			</div>
+			<div class="module">
+				<h3 class="dataTitle">
+				供暖标题
+			</div>
+			<div class="module">
+				<div class="chooseBox">
+		
+				</div>
+			</div>
+		
+			<div class="module lisenerData" id="monitorList">
+				<h3 class="dataTitle1">
+					实时监控数据
+				</h3>
+				<table class="dataTable1">
+					<thead>
+						<tr>
+							<th>名称</th>
+							<th>运行状态</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+				<!--<table class="dataTable">
+					<thead>
+						<tr>
+							<th>名称</th>
+							<th>运行状态</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>-->
+			</div>
+
+			<div class="module lisenerData state" id="cubeList" style="display: none;">
+				<h3 class="dataTitle">
+				实时监控数据
+			</h3>
+				<table class="dataTable">
+					<thead>
+						<tr>
+							<th>名称</th>
+							<th class="dataTableth">运行状态</th>
+							<th>
+								<div class="kg on"><i class="icon"></i></div>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<span>烟尘</span>
+							</td>
+							<td>
+								<b class="red">报警</b>
+							</td>
+							<td>
+								<button class="tableBtn">控制器</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="module lisenerData">
+				<table class="dataTable2 _2">
+					<h3 class="dataTitle2">
+						当班人员表
+					</h3>
+					<thead>
+						<tr>
+							<th>姓名</th>
+							<th>电话</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--<tr>
+							<td>小红</td>
+							<td>18842032134</td>
+						</tr>-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!--弹窗_密码-->
+		<div class="window _s pword">
+			<b class="before"></b>
+			<div class="dialog _s">
+				<p>请输入控制密码 <i></i></p>
+				<input type="password" id="password" maxlength="10" />
+				<div class="btnBox">
+					<button class="g">确定</button>
+				</div>
+			</div>
+		</div>
+		<!--弹窗_控制器-->
+		<div class="window _s control" id="window _s control">
+			<b class="before"></b>
+			<div class="dialog _s">
+				<p><span id='counterName'>加药罐搅拌器</span> <i></i></p>
+				<div class="state">
+					<span id="open_status">运行状态</span>
+					<span id="close_status">故障状态</span>
+				</div>
+
+				<div class="btnBox">
+					<button class="b">启动</button>
+				</div>
+
+				<div class="btnBox">
+					<button class="y">停止</button>
+				</div>
+				<div class="pl">
+					<div>
+						<span>频率反馈</span>
+						<input type="number" id='freGet' readonly="readonly" />
+						<span>Hz</span>
+					</div>
+					<div>
+						<span>频率给定</span>
+						<input type="number" id='freSet' max="99999" />
+						<span>Hz</span>
+					</div>
+				</div>
+				<div class="btnBox">
+					<button class="g ok">发送指定数值</button>
+				</div>
+				<div class="btnBox">
+					<button class="voidg ok">查看历史记录</button>
+				</div>
+				<span class="msg" id='msg'>执行指令失败</span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			mui.ready(function() {
+				mui('nav').on('tap', 'a', function() {
+					document.location.href = this.href;
+				});
+			})
+			mui.back = function() {
+					location.href = 'SelectScene.html';
+				}
+				//			document.getElementById('window _s control').addEventListener('click',function(e){
+				//				if(e.target.id == 'window _s control'){
+				//					$(".window").hide();
+				//				}
+				//			},false);
+				//		封装好的选择日期绑定
+				//		该日期是android原生日期框,需要在手机运行
+				//			chooseDate({
+				//				ele: ".mui-title a", //触发日期弹窗的按钮
+				//				now: "2016-08-19", //可以写auto 为目前时间
+				//				minDate: "2010-01-03", //最小日期
+				//				maxDate: "2018-01-03" //最大日期
+				//			}, function(nowDate) {
+				//				console.log(nowDate);
+				//				//回调函数
+				//			});
+			$(".window._s .dialog > p:first-child i").click(function() {
+				allClose(); //关闭定时器
+				$('#password').val('');
+				$(".window").hide();
+			});
+		</script>
+	</body>
+
+</html>

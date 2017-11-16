@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/forget.css"/>
+		<link rel="stylesheet" type="text/css" href="css/table01.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+		 
+		<script type="text/javascript" src="js/getToken.js" ></script>
+		<script type="text/javascript" src="layer/layer.js" ></script>
+		<script src="js/pageJs/sendRepair.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.md5.js" ></script>
+		<style type="text/css">
+			.form{
+				width: 15rem;
+			}
+			.form li{
+				margin-bottom: 2rem !important;
+			}
+			.form li span{
+				margin-bottom: 0.6rem;
+				font-weight: bold;
+				width: 4rem;
+				text-align: right;
+			}
+			.form li select{
+				border: 0.075rem solid #017d7b !important; 
+				font-size: 0.7rem;
+				padding: 0.1rem 0.2rem !important;
+				line-height: 0.7rem !important;
+				width: 10rem;
+			}
+		</style>
+
+	</head>
+	<body>
+		<!--头
+        -->
+        <div class="top"> 
+        	<a href="repair_info.html"><img src="images/img_06.png"/></a>
+        	报修表
+        </div>
+        <!--体
+        -->
+        <div class="section">
+			<div class="title">
+				发起报修
+	        </div>
+	        <ul class="form">
+	        	<!--<li>
+	        		<span>报修时间：</span>
+	        		<span>2016-11-11 10:10:10</span>
+	        	</li>
+        		<li>
+	        		<span>开始维修时间：</span>
+	        		<span>2016-11-11 10:10:10</span>
+	        	</li>-->
+	        	<li>
+	        		<span>维修人：</span>
+	        		<b>王鑫</b>
+	        	</li>
+	        	<li>
+	        		<span>维修现场：</span>
+	        		<select name="scene"  onchange="loadEquipment(this)">
+	        			<option value="">请选择现场</option>
+	        			<!--<option value="维修现场11">维修现场11</option>-->
+	        			<!--<option value="维修现场22">维修现场22</option>-->
+	        			
+	        		</select>
+	        	</li>
+	        	
+	        	<li>
+	        		<span>维修设备：</span>
+	        		<select name="scene" onchange="loadComponent(this)">
+	        			<option value="">请选择设备</option>
+	        			<!--<option value="维修设备11">维修设备11</option>-->
+	        			<!--<option value="维修设备22">维修设备22</option>-->
+	        			
+	        		</select>
+	        	</li>
+	        	<li>
+	        		<span>维修部件：</span>
+	        		<select name="scene">
+	        			<option value="">请选择部件</option>
+	        			<!--<option value="">维修部件11</option>-->
+	        			<!--<option value="">维修部件22</option>-->
+	        		</select>
+	        	</li>
+	        	<!--<li>
+	        		<span>预期报修完成时间：</span>
+	        		<input type="datetime-local" id="date"></input>
+	        	</li>-->
+	        </ul>
+	        <button id="submit" onclick="submit()">提交</button>
+        </div>
+        <script src="js/mui.min.js"></script>
+		<script src="js/mui_push2.js"></script>
+	</body>
+</html>

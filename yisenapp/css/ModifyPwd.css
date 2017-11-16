@@ -1,0 +1,84 @@
+button.userExit {
+				width: 100%;
+				display: block;
+				background: #1FC482;
+				border: 0;
+				border-radius: 0;
+				color: #FFFFFF;
+				height: 42px;
+				margin: 30px 0;
+			}
+			
+			body {
+				background: #fff;
+			}
+			
+			.mui-content {
+				background: #fff;
+			}
+			
+			.form {
+				padding: 0 15px;
+			}
+			
+			.formRow {
+				background: #fff;
+				top: 44px;
+				left: 0;
+				width: 100%;
+				z-index: 1;
+				padding-top: 10px;
+				margin-bottom: 0;
+			}
+			
+			.formRow span {
+				position: absolute;
+				top: 0;
+				left: 15px;
+				height: 100%;
+				line-height: 58px;
+			}
+			
+			.formRow span+ input {
+				padding-left: 58px;
+			}
+			
+			.formRow ul {
+				display: none;
+				position: absolute;
+				width: 100%;
+				border: 1px solid #BDBDBD;
+				border-top: 0;
+				background: #fff;
+				z-index: 999;
+			}
+			
+			.formRow ul li {
+				line-height: 37px;
+				padding: 0 10px;
+			}
+			
+			.formRow input {
+				border: 0;
+				border-bottom: 1px solid #BDBDBD;
+				height: 42px;
+				margin-bottom: 0;
+				font-size: 14px;
+				padding-left: 3px;
+				padding-right: 50px;
+			}
+			
+			.formRow input:focus~ ul {
+				display: block;
+			}
+			
+			.formRow .icon {
+				width: 15.5px;
+				height: 15px;
+				background-position: 0 -106px;
+				position: absolute;
+				top: 23.5px;
+				right: 15px;
+				z-index: 1;
+			}
+		

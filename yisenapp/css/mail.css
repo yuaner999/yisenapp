@@ -1,0 +1,48 @@
+.mail {
+  margin-top: 0.75rem;
+}
+.mail li {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 0.07500000000000001rem solid #017d7b;
+  border-top: 0.07500000000000001rem solid #017d7b;
+  background: #f6f8f4;
+}
+.mail li div {
+  position: relative;
+  font-size: 0.65rem;
+}
+.mail li div p {
+  position: absolute;
+  float: left;
+  font-size: inherit;
+  color: inherit;
+}
+.mail li div a {
+  margin-left: 1.5rem;
+  font-size: inherit;
+  display: block;
+  margin-right: 3.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.mail li div span {
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #48cc00;
+}
+.mail li div.new p {
+  color: #f1b300;
+  font-weight: bold;
+}
+.mail li div.old p {
+  color: #999;
+  font-weight: bold;
+}
+.mail li div.old a {
+  color: #999;
+}

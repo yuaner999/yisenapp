@@ -1,0 +1,62 @@
+.trsn{
+    transition: all .2s;
+    -webkit-transition: all .2s;
+}
+.locationList{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f6f8f4;
+    z-index: 3;
+    border-top: 1px solid #BDBDBD;
+    line-height: 41px;
+    .box{
+        overflow: auto;
+        max-height: 240px;
+    }
+    p{
+        
+        height: 42px;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        background: inherit;
+        padding: 0 17px;
+        font-weight: bold;
+        mark{
+            color: #1fc482;
+            font-weight: bold;
+            margin: 0 4px;
+            background: transparent;
+        }
+        .right{
+            font-weight: normal;
+        }
+    }
+    ul{
+        height: 100%;
+        li{
+            .trsn;
+            padding: 0 17px;
+            &:active{
+                background: #1fc482;
+                div{
+                    border-color: transparent;
+                }
+            }
+            div{
+                border-bottom: 1px solid #BDBDBD;
+            }
+            .mui-badge{
+                color: #1fc482;
+                background: #fff;
+            }
+            &:last-of-type div{
+                border: 0;
+            }
+        }
+    }
+}

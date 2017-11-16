@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/inform.css" />
+		<!--是否是导航页退出appjs-->
+		<script src="js/appExit.js" type="text/javascript" charset="utf-8"></script>
+		<!--日期js-->
+		<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="js/pageJs/ModifyPwd.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/getToken.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.md5.js"></script>
+		<script type="text/javascript" src="js/getToken.js"></script>
+		<script src="js/echarts.simple.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="chart/Chart-1.0.1-beta.4.js"></script>-->
+		<!--<script type="text/javascript" src="js/pageJs/statistical.js" ></script>-->
+		<script src="js/pageJs/checkMessageStatus.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/checkMessageStatus2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+<!--	<script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>-->
+		<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+		<script src="js/pageJs/lineChart.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" onclick="checkButton()"></a>
+			<h1 class="mui-title" id="item"></h1>
+		</header>
+		<!--底部tab-->
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="homepage.html">
+				<span class="mui-icon data"></span>
+				<span class="mui-tab-label">数据监控</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="workControl.html" ,>
+				<span class="mui-icon app"></span>
+				<span class="mui-tab-label">全部应用</span>
+				<span class="mui-badge all" id="workControl"></span>
+			</a>
+			<a class="mui-tab-item" href="message_info.html">
+				<span class="mui-icon info"></span>
+				<span class="mui-tab-label">消息</span>
+				<span class="mui-badge" id="message"></span>
+			</a>
+			<a class="mui-tab-item" href="User.html">
+				<span class="mui-icon user"></span>
+				<span class="mui-tab-label">用户中心</span>
+			</a>
+		</nav>
+		<!--内容-->
+		<div class="mui-content">
+			<div class="module">
+				<div class="setTime">
+					<div>
+						<i class="icon"></i>
+						<span id="date1"></span>
+					</div>
+					<div>
+						<i class="icon"></i>
+					</div>
+					<div>
+						<i class="icon"></i>
+						<span id="date2"></span>
+					</div>
+				</div>
+			</div>
+			<!--消息列表-->
+			<div class="box">
+				<!--各种状态的信息-->
+				<div class="infoItem">
+					<ul>
+						<li>
+							<span>现&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;场</span>
+							<span id="sceneName">呵呵</span>
+						</li>
+						<li>
+							<span>设&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备</span>
+							<span id="equ">哈哈</span>
+						</li>
+						<li>
+							<span>项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目</span>
+							<span id="item1"></span>
+						</li>
+					</ul>
+					<!--<div class="btnBox">
+						<button class="blockBox g" onclick="GetLineInfo()">显示折线图</button>
+					</div>-->
+				</div>
+			</div>
+			<div class="module">
+				<!--图表盒子-->
+				<div class="mainBox">
+					<div id="main" style="width: 100%;height: 300px;"></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			mui.ready(function() {
+					mui('nav').on('tap', 'a', function() {
+						document.location.href = this.href;
+					});
+				})
+				//		封装好的选择日期绑定
+				//		该日期是android原生日期框,需要在手机运行
+				//开始日期
+			chooseDate({
+				ele: ".setTime div ", //触发日期弹窗的按钮
+				now: "2016-10-10", //可以写auto 为目前时间
+				minDate: "2010-01-03", //最小日期
+				maxDate: "2028-01-03" //最大日期
+			}, function(nowDate) {
+				//回调函数
+				startTime = dateformat(nowDate);
+				getTokenIdLocal(function(tokenId) {
+					if (tokenId == "null") { //Token过期或者首次没有Token
+						getTokenIdServer(function(tokenId) { //重新获取TokenId
+							newtokenId = tokenId;
+							GetLineInfo(tokenId);
+						});
+					} else { //获取TokenId成功
+						newtokenId = tokenId;
+						GetLineInfo(tokenId);
+
+					}
+				});
+			});
+			//结束日期
+			chooseDate({
+				ele: ".setTime div:last-of-type ", //触发日期弹窗的按钮
+				now: "auto", //可以写auto 为目前时间
+				minDate: "2010-01-03", //最小日期
+				maxDate: "2028-01-03" //最大日期
+			}, function(nowDate) {
+				//回调函数
+				endTime = dateformat(nowDate);
+				getTokenIdLocal(function(tokenId) {
+					if (tokenId == "null") { //Token过期或者首次没有Token
+						getTokenIdServer(function(tokenId) { //重新获取TokenId
+							newtokenId = tokenId;
+							GetLineInfo(tokenId);
+						});
+					} else { //获取TokenId成功
+						newtokenId = tokenId;
+						GetLineInfo(tokenId);
+
+					}
+				});
+			});
+		</script>
+		
+		<script>
+			mui.ready(function() {
+				mui('nav').on('tap', 'a', function() {
+					document.location.href = this.href;
+				});
+			})
+		</script>
+	</body>
+
+</html>

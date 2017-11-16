@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/inform.css" />
+		<!--是否是导航页退出appjs-->
+		<script src="js/appExit.js" type="text/javascript" charset="utf-8"></script>
+		<!--日期js-->
+		<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script src="js/getToken.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="js/pageJs/checkMessageStatus.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/checkMessageStatus2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/verificationinfo.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="workControl.html"></a>
+			<h1 class="mui-title">校验</h1>
+		</header>
+		<!--底部tab-->
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="homepage.html">
+				<span class="mui-icon data"></span>
+				<span class="mui-tab-label">数据监控</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="workControl.html" ,>
+				<span class="mui-icon app"></span>
+				<span class="mui-tab-label">全部应用</span>
+				<span class="mui-badge" id="workControl"></span>
+			</a>
+			<a class="mui-tab-item" href="message_info.html">
+				<span class="mui-icon info"></span>
+				<span class="mui-tab-label">消息</span>
+				<span class="mui-badge" id="message"></span>
+			</a>
+			<a class="mui-tab-item" href="User.html">
+				<span class="mui-icon user"></span>
+				<span class="mui-tab-label">用户中心</span>
+			</a>
+		</nav>
+		<!--内容-->
+		<div class="mui-content">
+			<div class="module">
+				<div class="setTime">
+					<div>
+						<i class="icon"></i>
+						<span id="startDate"></span>
+					</div>
+					<div>
+						<i class="icon"></i>
+					</div>
+					<div>
+						<i class="icon"></i>
+						<span id="endDate"></span>
+					</div>
+				</div>
+			</div>
+			<div class="module">
+				<p class="filterTitle">筛选</p>
+				<div class="selfSelect">
+					<select name="message_scene" id="message_scene" placeholder="" onchange="changeScene(this)">
+						<option value="选择现场">选择现场</option>
+					</select>
+				</div>
+				<div class="selfSelect">
+					<select name="" id="message_type" placeholder="士大夫三" onchange="changeType(this)">
+						<option value="">请选择类型</option>
+						<option value="0">未开始</option>
+						<option value="1">已提交</option>
+						<option value="2">未校验</option>
+
+					</select>
+				</div>
+			</div>
+
+			<!--消息列表-->
+			<div class="box">
+				<!--各种状态的信息-->
+			</div>
+		</div>
+		<script type="text/javascript">
+		var startDate =new Date(dateformatByMonthPrior(new Date(), "yyyy-MM-dd HH:mm:ss"));
+		var endDate = new Date(dateformat(new Date(), "yyyy-MM-dd HH:mm:ss"));
+			//		封装好的选择日期绑定
+			//		该日期是android原生日期框,需要在手机运行
+			//开始日期
+			chooseDate({
+				ele: ".setTime div ", //触发日期弹窗的按钮
+				now: dateformatByMonthPrior(new Date(), "yyyy-MM-dd"), //可以写auto 为目前时间
+				minDate: "2010-01-03", //最小日期
+				maxDate: "2028-01-03" //最大日期
+			}, function(nowDate) {
+				console.log(nowDate);
+				startDate = nowDate;
+				if(endDate < nowDate) {
+					layer.msg("请选择正确的时间顺序");
+					return;
+				}
+				//回调函数
+				$("#startDate").val(dateformat(nowDate, "yyyy-MM-dd HH:mm:ss"));
+				startNum = 0;
+				statusupdate = 0;
+				getlistinfo(newtokenId);
+			});
+			//结束日期
+			chooseDate({
+				ele: ".setTime div:last-of-type ", //触发日期弹窗的按钮
+				now: "auto", //可以写auto 为目前时间
+				minDate: "2010-01-03", //最小日期
+				maxDate: "2028-01-03" //最大日期
+			}, function(nowDate) {
+				console.log(nowDate);
+				endDate = nowDate;
+				if(endDate < startDate) {
+					layer.msg("请选择正确的时间顺序");
+					return;
+				}
+				//回调函数
+				$("#endDate").val(dateformat(nowDate, "yyyy-MM-dd HH:mm:ss"));
+				startNum = 0;
+				statusupdate = 0;
+				getlistinfo(newtokenId);
+			});
+			mui.ready(function() {
+				mui('nav').on('tap', 'a', function() {
+					document.location.href = this.href;
+				});
+			})
+			mui.back = function() {
+				location.href = 'workControl.html';
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,36 @@
+.box {
+  border: 0.07500000000000001rem solid #017d7b;
+}
+.list {
+  border: 0.07500000000000001rem solid #017d7b;
+  margin-top: 3rem;
+}
+.list li {
+  padding: 0 1rem !important;
+}
+.list li > div {
+  width: 3.125rem;
+}
+.list li > div img {
+  width: 0.775rem;
+  vertical-align: middle;
+  height: 0.55rem;
+}
+.list li p {
+  max-width: 5.75rem !important;
+}
+.list li .ok {
+  color: #41c400;
+}
+.list li .no_ok {
+  color: #ffc000;
+}
+.list li .wait_ok {
+  color: #df5643;
+}
+.list li .blue {
+  color: #09b7ff;
+}
+.list li > span:last-of-type {
+  right: 2.025rem;
+}

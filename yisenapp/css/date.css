@@ -1,0 +1,239 @@
+.box {
+  width: 16.200000000000003rem;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #017d7b;
+  position: absolute;
+  top: 3.75rem;
+  left: 1.2750000000000001rem;
+  z-index: 100;
+  text-align: center;
+}
+.box > button,
+.box > input {
+  width: 100%;
+  background: transparent;
+  font-size: 0.65rem;
+  color: #fff;
+  border: none;
+  letter-spacing: 0.07500000000000001rem;
+}
+.box > input {
+  display: none;
+}
+.on,
+.on2 {
+  display: inline-block;
+  line-height: 1.5rem;
+  margin-right: 0.25rem;
+}
+.on p,
+.on2 p {
+  font-size: 0.7000000000000001rem;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+.lnag {
+  float: left;
+  width: 4%;
+  color: #fff;
+  line-height: 1.5rem;
+  font-size: 0.9500000000000001rem;
+  text-align: center;
+}
+.window,
+.hours {
+  text-align: left;
+  clear: both;
+  border: 0.07500000000000001rem solid #017d7b;
+  background: #fff;
+  width: 16.200000000000003rem;
+  padding: 0.775rem 0.25rem 0;
+  padding-bottom: 0.25rem;
+}
+.window .date,
+.hours .date {
+  padding-bottom: 0.5rem;
+}
+.window .date > p,
+.hours .date > p {
+  font-size: 0.7000000000000001rem;
+  float: right;
+  margin-top: 0.325rem;
+  margin-right: 0.75rem;
+  color: #017d7b;
+}
+.window .date > div,
+.hours .date > div {
+  position: relative;
+  display: inline-block;
+}
+.window .date > div:first-child,
+.hours .date > div:first-child {
+  margin-right: 0.30000000000000004rem;
+  margin-left: 0.5rem;
+}
+.window .date > div div,
+.hours .date > div div {
+  position: absolute;
+  top: 0.05rem;
+  right: 0;
+  width: 1.25rem;
+  height: 1.1500000000000001rem;
+  border-left: 0.07500000000000001rem solid #97c0bf;
+  text-align: center;
+}
+.window .date > div div b,
+.hours .date > div div b {
+  display: inline-block;
+  border: 0.325rem solid transparent;
+  border-top-color: #017d7b;
+  margin-top: 0.415rem;
+}
+.window .date select,
+.hours .date select {
+  background: transparent;
+  height: 1.1500000000000001rem;
+  border: 0.07500000000000001rem solid #97c0bf !important;
+  display: inline-block;
+  padding: 0 0 0 0.5rem !important;
+  border-radius: 0.30000000000000004rem;
+  color: #017d7b;
+  font-size: 0.65rem;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin-bottom: 0.2rem !important;
+}
+.window .date .year,
+.hours .date .year,
+.window .date .hour,
+.hours .date .hour,
+.window .date .minute,
+.hours .date .minute {
+  width: 4.1000000000000005rem;
+}
+.window .date .month,
+.hours .date .month {
+  width: 3.25rem;
+}
+.window .week,
+.hours .week {
+  border-top: 0.07500000000000001rem solid #97c0bf;
+  border-bottom: 0.07500000000000001rem solid #97c0bf;
+  overflow: hidden;
+  width: 100%;
+}
+.window .week:before,
+.hours .week:before {
+  content: "";
+  float: left;
+  width: 1%;
+  height: 0.07500000000000001rem;
+}
+.window .week:after,
+.hours .week:after {
+  content: "";
+  float: left;
+  width: 1%;
+  height: 0.07500000000000001rem;
+}
+.window .week li,
+.hours .week li {
+  float: left;
+  width: 14%;
+  text-align: center;
+  font-size: 0.55rem;
+  color: #595858;
+  height: 1.875rem;
+  line-height: 1.875rem;
+}
+.window .week li:first-child,
+.hours .week li:first-child,
+.window .week li:last-child,
+.hours .week li:last-child {
+  color: #017d7b;
+}
+.window .day,
+.hours .day {
+  overflow: hidden;
+}
+.window .day:before,
+.hours .day:before {
+  content: "";
+  float: left;
+  width: 1%;
+  height: 100%;
+}
+.window .day:after,
+.hours .day:after {
+  content: "";
+  float: left;
+  width: 1%;
+  height: 100%;
+}
+.window .day li,
+.hours .day li {
+  float: left;
+  width: 14%;
+  height: 2rem;
+  font-size: 0.55rem;
+}
+.window .day li a,
+.hours .day li a {
+  display: block;
+  margin: 0 auto;
+  width: 1.3250000000000002rem;
+  height: 1.3250000000000002rem;
+  line-height: 1.3250000000000002rem;
+  margin-top: 0.325rem;
+  color: #97c0bf;
+  text-align: center;
+  font-size: 0.55rem;
+}
+.hours {
+  display: none;
+  padding-bottom: 0.775rem;
+}
+.hour select {
+  max-height: 2.5rem;
+  overflow: auto;
+}
+.bg {
+  text-align: center;
+  position: fixed;
+  background: #000000;
+  opacity: 0.6;
+  -webkit-opacity: 0.6;
+  -moz-opacity: 0.6;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999999999999;
+}
+.yesorno {
+  text-align: center;
+  border: 0.1rem solid #017d7b;
+  font-size: 0.75rem;
+  position: fixed;
+  top: 30vh;
+  left: 2.875rem;
+  width: 13rem;
+  background: #fff;
+  z-index: 999999999999999999999;
+  padding: 0.75rem;
+}
+.yesorno p {
+  font-size: 0.75rem;
+  color: #017d7b;
+  margin-bottom: 0.75rem;
+}
+.yesorno button {
+  font-size: 0.75rem;
+  color: #fff;
+  background: #017d7b;
+  border: none;
+  margin-bottom: 0.75rem;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/form.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+	 
+	<script type="text/javascript" src="js/getToken.js" ></script>
+	<script type="text/javascript" src="js/jquery.md5.js" ></script>
+	<script type="text/javascript" src="layer/layer.js" ></script>
+	<!--<script src="js/pageJs/sendmessage.js" type="text/javascript" charset="utf-8"></script>-->
+	 <!--start kindeditor-->
+	
+    <!--引用路径正确与否决定kindeditor是否被成功引用-->
+    <link rel="stylesheet" href="kindeditor/themes/default/default.css"/>
+    <script charset="utf-8" src="kindeditor/kindeditor.js"></script>
+    <script charset="utf-8" src="kindeditor/lang/zh_CN.js"></script>
+  	<script src="js/pageJs/getEmp.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+    	.form .sendBox input:first-of-type{
+            width: 100%;
+            width: calc(100% - 50px);
+            width: -webkit-calc(100% - 50px);
+    	}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">发送消息</h1>
+	</header>
+	<div class="mui-content">
+    	<div class="formRow">
+    		<span>收件人：</span>
+    		<input type="text"  placeholder="请输入姓名或者登陆账号"  id="emp"  onkeyup="showul(this.value)"/>
+    		<i class="icon"></i>
+    		<ul id="empul"></ul>
+    	</div>
+	    <form class="form">
+	    	<ul class="record" style="display: none;">	
+	    	</ul>
+	    	<p id="loadmore" style="padding-bottom:1rem;text-align: center;font-size: 0.6rem;line-height: 1rem; display: none;"><img src="images/loading.gif" />正在加载更多的信息</p>
+	    	<div class="sendBox">
+	    		<input type="text" id="editor_id"/>
+	    		<input type="button" onclick="commit()" value="发送" />
+	    	</div>
+	    </form>
+	</div>
+	<script type="text/javascript">
+		$(".formRow .icon").click(function  () {
+			$(this).prev().val("");
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/app.css" />
+		<link rel="stylesheet" type="text/css" href="css/data.css"/>		
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript" src="js/getToken.js"></script>
+		<script type="text/javascript" src="layer/layer.js"></script>
+		<script type="text/javascript" src="js/jquery.md5.js"></script>
+		<script src="js/pageJs/sendNewMaintain.js" type="text/javascript" charset="utf-8"></script>
+	    <!--日期js-->
+	    <script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.manNum {
+				margin: 0;
+				width: 100%;
+				border: 1px solid #1FC482 !important;
+				height: 100%;
+				border-radius: 0;
+				background: transparent;
+				position: relative;
+				z-index: 1;
+			}
+			
+			.userName {
+				margin: 0;
+				width: 100%;
+				border: 1px solid #cccccc !important;
+				height: 100%;
+				border-radius: 0;
+				background: transparent;
+				position: relative;
+				z-index: 1;
+			}
+			
+			.text {
+				margin-top: 3rem;
+			}
+			
+			.text li h3 {
+				font-size: 15px;
+				margin-top: 1rem;
+			}
+			
+			.text li textarea {
+				border: 0.075rem solid #1FC482;
+				font-size: 0.7rem;
+				color: #666;
+			}
+			
+			#equ {
+				border: 0.075rem solid #1FC482;
+				padding: 0.5rem;
+				display: inline-block !important;
+			}
+			
+			#equ p {
+				float: left;
+				margin-right: 0.5rem;
+				margin-bottom: 0.7rem;
+			}
+			
+			#equ p input {
+				vertical-align: middle;
+				margin-right: 0.3rem;
+			}
+			
+			.module> button {
+				width: 100%;
+				background: #1FC482;
+				font-size: 0.75rem;
+				color: #fff;
+				text-align: center;
+				margin: 0 auto;
+				line-height: 1.675rem;
+				display: block;
+				margin: 0 auto;
+				margin-top: 0.75rem;
+				margin-bottom: 0.75rem;
+				padding: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">发起保养</h1>
+		</header>
+		<div id='setting' class="mui-content" id="setting">
+			<div class="repeatSele">
+				<h3>保养负责人：</h3>
+				<!--禁用的下拉-->
+				<div>
+					<input id="respons" readonly="readonly" class="userName" type="text" value="" />
+				</div>
+			</div>
+			<div class="repeatSele">
+				<h3>保养人数：</h3>
+				<div>
+					<input class="manNum" type="number" value="" placeholder="填写人数" maxlength="2" />
+				</div>
+			</div>
+			<div class="repeatSele">
+				<h3>保养现场：</h3>
+				<div class="selfSelect">
+					<select name="scene" onchange="loadEquipment(this)">
+						<option value="选择现场">请选择现场</option>
+					</select>
+				</div>
+			</div>
+			<div class="repeatSele">
+				<h3>保养设备：</h3>
+				<div class="selfSelect">
+					<select name="scene" onchange="loadComponent(this)">
+						<option value="">请选择设备</option>
+					</select>
+				</div>
+			</div>
+			<div class="repeatSele">
+				<h3>保养部件：</h3>
+				<div class="selfSelect">
+					<select name="scene">
+						<option value="">请选择部件</option>
+					</select>
+				</div>
+			</div>
+			<div class="btnBox padding">
+				<button class="g" id="setting" onclick="showDiv()">设定完毕</button>
+			</div>
+		</div>
+		<div class="module" id="detail" hidden="true">
+			<ol class="text">
+				<li>
+					<h3>预期开始保养的时间:</h3>
+			    	<ul class="setTime">
+			    		<li>
+			    			<div>
+			    				<span class="normal">
+			    					<i class="icon"></i>
+			    					<span id="date"></span>
+			    				</span>
+			    				<span class="right">开始时间</span>
+			    			</div>
+			    		</li>
+			    	</ul>
+				</li>
+				<li>
+					<h3>需要停止的关联部件：<h3>
+					<span id="equ">
+				
+					</span>
+				</li>
+				<li>
+					<h3 style="clear: both;">保养方案：<h3>
+					<textarea name="" rows="" cols=""></textarea>
+				</li>
+			</ol>
+			<button id="submit" onclick="submit()">提交</button>
+		</div>
+	</body>
+
+</html>

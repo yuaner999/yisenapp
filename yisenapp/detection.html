@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/data.css"/>
+    
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/getToken.js" type="text/javascript" charset="utf-8"></script>
+	 
+	<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pageJs/detection.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+    	tr th:first-of-type,tr td:first-of-type{
+    		width: 40%;
+    	}
+    </style>
+</head>
+<body style="background: #fff;">
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-icon mui-icon-left-nav mui-pull-left" onclick="tiaozhuan()"></a>
+	    <h1 class="mui-title">查看详情</h1>
+	</header>
+	<div class="mui-content">
+		<div class="module lisenerData">
+			<h3 class="dataTitle">
+				检测记录表
+			</h3>
+			<table class="dataTable">
+				<thead>
+					<tr>
+						<th>测定项目</th>
+						<th>单位</th>
+						<th>符号</th>
+						<th>值</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody id="equ">
+					<tr>
+						<td>
+							<span>烟尘</span>
+						</td>
+						<td>
+							<span>C</span>
+						</td>
+						<td>
+							<span>mg/m<sup>3</sup></span>
+						</td>
+						<td>
+							<span>值</span>
+						</td>
+						<td class="bd">
+							<i class="icon"></i>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+<script src="js/mui.min.js"></script>
+<script src="js/mui_push2.js"></script>
+</html>

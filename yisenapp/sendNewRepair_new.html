@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+	 
+	<script type="text/javascript" src="js/getToken.js" ></script>
+	<script type="text/javascript" src="layer/layer.js" ></script>
+	<script type="text/javascript" src="js/jquery.md5.js" ></script>
+	<script src="laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pageJs/sendNewRepair.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">发起报修</h1>
+	</header>
+	<div class="mui-content">
+	    <div class="repeatSele">
+	    	<h3>维修人员：</h3>
+	    	
+	    	<div class="selfSelect disable">
+	    		<input id="respons" value=""  readonly="readonly"/>
+	    		<!--禁用的下拉-->
+		    	<!--<select disabled>
+		    		<option value="选择现场" id="respons">李晓明</option>
+		    	</select>-->
+	    	</div>
+	    </div>
+	    <div class="repeatSele">
+	    	<h3>维修现场：</h3>
+	    	<div class="selfSelect">
+		    	<select onchange="loadEquipment(this)">
+		    		<option value="选择现场" >现场</option>
+		    	</select>
+	    	</div>
+	    </div>
+	    <div class="repeatSele">
+	    	<h3>维修设备：</h3>
+	    	<div class="selfSelect">
+		    	<select onchange="loadComponent(this)">
+		    		<option value="选择现场">请选择现场</option>
+		    	</select>
+	    	</div>
+	    </div>
+	    <div class="repeatSele">
+	    	<h3>维修部件：</h3>
+	    	<div class="selfSelect">
+		    	<select >
+		    		<option value="选择现场">请选择设备</option>
+		    	</select>
+	    	</div>
+	    </div>
+	    <div class="btnBox padding">
+	    	<button class="g" onclick="showDiv()">设定完毕</button>
+	    </div>
+	</div>
+</body>
+</html>

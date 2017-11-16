@@ -1,0 +1,428 @@
+body {
+  min-height: 100vh;
+  background: #f7f7f7 !important;
+}
+.top {
+  z-index: 999;
+}
+.mui-pull-top-pocket {
+  top: 4.5rem;
+}
+ul.mui-table-view {
+  margin-top: 5.5rem;
+}
+.box {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #017d7b;
+  position: absolute;
+  z-index: 100;
+}
+.on,
+.on2 {
+  float: left;
+  width: 48%;
+  line-height: 1.5rem;
+}
+.on p,
+.on2 p {
+  margin-bottom: 0;
+  font-size: 0.7000000000000001rem;
+  color: #fff;
+  text-align: center;
+}
+.on p b,.on2 p b{
+	display: inline-block;
+	border: 0.3rem solid transparent;
+	border-top-color: #fff;
+	position: relative;
+	top: 0.2rem;
+	left: 0.1rem;
+}
+.lnag {
+  float: left;
+  width: 4%;
+  color: #fff;
+  line-height: 1.5rem;
+  font-size: 0.9500000000000001rem;
+  text-align: center;
+}
+.window {
+  clear: both;
+  display: none;
+  border: 0.07500000000000001rem solid #017d7b;
+  background: #fff;
+  width: 16.200000000000003rem;
+  padding: 0.775rem 0.25rem 0;
+  padding-bottom: 0.25rem;
+}
+.window .date {
+  padding-bottom: 0.5rem;
+}
+.window .date > p {
+  font-size: 0.7000000000000001rem;
+  float: right;
+  margin-top: 0.325rem;
+  margin-right: 0.75rem;
+  color: #017d7b;
+}
+.window .date > div {
+  position: relative;
+  display: inline-block;
+}
+.window .date > div:first-child {
+  margin-right: 0.30000000000000004rem;
+  margin-left: 0.5rem;
+}
+.window .date > div div {
+  position: absolute;
+  top: 0.05rem;
+  right: 0;
+  width: 1.25rem;
+  height: 1.1500000000000001rem;
+  border-left: 0.07500000000000001rem solid #97c0bf;
+  text-align: center;
+}
+.window .date > div div b {
+  display: inline-block;
+  border: 0.325rem solid transparent;
+  border-top-color: #017d7b;
+  margin-top: 0.375rem;
+}
+.window .date select {
+  background: transparent;
+  height: 1.1500000000000001rem;
+  border: 0.07500000000000001rem solid #97c0bf !important;
+  display: inline-block;
+  padding: 0 0 0 0.5rem !important;
+  border-radius: 0.30000000000000004rem;
+  color: #017d7b;
+  font-size: 0.65rem;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin-bottom: 0.2rem !important;
+}
+.window .date .year {
+  width: 4.1000000000000005rem;
+}
+.window .date .month {
+  width: 3.25rem;
+}
+.window .week {
+  border-top: 0.07500000000000001rem solid #97c0bf;
+  border-bottom: 0.07500000000000001rem solid #97c0bf;
+  overflow: hidden;
+  width: 100%;
+}
+.window .week:before {
+  content: "";
+  float: left;
+  width: 1%;
+  height: 0.07500000000000001rem;
+}
+.window .week:after {
+  content: "";
+  float: left;
+  width: 1%;
+  height: 0.07500000000000001rem;
+}
+.window .week li {
+  float: left;
+  width: 14%;
+  text-align: center;
+  font-size: 0.55rem;
+  color: #595858;
+  height: 1.875rem;
+  line-height: 1.875rem;
+}
+.window .week li:nth-child(6),
+.window .week li:last-child {
+  color: #017d7b;
+}
+.window .day {
+  overflow: hidden;
+}
+.window .day:before {
+  content: "";
+  float: left;
+  width: 1%;
+  height: 100%;
+}
+.window .day:after {
+  content: "";
+  float: left;
+  width: 1%;
+  height: 100%;
+}
+.window .day li {
+  float: left;
+  width: 14%;
+  height: 2rem;
+  font-size: 0.55rem;
+}
+.window .day li a {
+  display: block;
+  margin: 0 auto;
+  width: 1.3250000000000002rem;
+  height: 1.3250000000000002rem;
+  line-height: 1.3250000000000002rem;
+  margin-top: 0.325rem;
+  color: #97c0bf;
+  text-align: center;
+  font-size: 0.55rem;
+}
+.window2 {
+  clear: both;
+  display: none;
+  border: 0.07500000000000001rem solid #017d7b;
+  background: #fff;
+  width: 16.200000000000003rem;
+  padding: 0.775rem 0.25rem 0;
+  padding-bottom: 0.25rem;
+}
+.window2 .date {
+  padding-bottom: 0.5rem;
+}
+.window2 .date > p {
+  font-size: 0.7000000000000001rem;
+  float: right;
+  margin-top: 0.325rem;
+  margin-right: 0.75rem;
+  color: #017d7b;
+}
+.window2 .date > div {
+  position: relative;
+  display: inline-block;
+}
+.window2 .date > div:first-child {
+  margin-right: 0.30000000000000004rem;
+  margin-left: 0.5rem;
+}
+.window2 .date > div div {
+  position: absolute;
+  top: 0.05rem;
+  right: 0;
+  width: 1.25rem;
+  height: 1.1500000000000001rem;
+  border-left: 0.07500000000000001rem solid #97c0bf;
+  text-align: center;
+}
+.window2 .date > div div b {
+  display: inline-block;
+  border: 0.325rem solid transparent;
+  border-top-color: #017d7b;
+  margin-top: 0.375rem;
+}
+.window2 .date select {
+  background: transparent;
+  height: 1.1500000000000001rem;
+  border: 0.07500000000000001rem solid #97c0bf !important;
+  display: inline-block;
+  padding: 0 0 0 0.5rem !important;
+  border-radius: 0.30000000000000004rem;
+  color: #017d7b;
+  font-size: 0.65rem;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin-bottom: 0.2rem !important;
+}
+.window2 .date .year {
+  width: 4.1000000000000005rem;
+}
+.window2 .date .month {
+  width: 3.25rem;
+}
+.window2 .week {
+  border-top: 0.07500000000000001rem solid #97c0bf;
+  border-bottom: 0.07500000000000001rem solid #97c0bf;
+  overflow: hidden;
+  width: 100%;
+}
+.window2 .week:before {
+  content: "";
+  float: left;
+  width: 1%;
+  height: 0.07500000000000001rem;
+}
+.window2 .week:after {
+  content: "";
+  float: left;
+  width: 1%;
+  height: 0.07500000000000001rem;
+}
+.window2 .week li {
+  float: left;
+  width: 14%;
+  text-align: center;
+  font-size: 0.55rem;
+  color: #595858;
+  height: 1.875rem;
+  line-height: 1.875rem;
+}
+.window2 .week li:nth-child(1),
+.window2 .week li:last-child {
+  color: #017d7b;
+}
+.window2 .day {
+  overflow: hidden;
+}
+.window2 .day:before {
+  content: "";
+  float: left;
+  width: 1%;
+  height: 100%;
+}
+.window2 .day:after {
+  content: "";
+  float: left;
+  width: 1%;
+  height: 100%;
+}
+.window2 .day li {
+  float: left;
+  width: 14%;
+  height: 2rem;
+  font-size: 0.55rem;
+}
+.window2 .day li a {
+  display: block;
+  margin: 0 auto;
+  width: 1.3250000000000002rem;
+  height: 1.3250000000000002rem;
+  line-height: 1.3250000000000002rem;
+  margin-top: 0.325rem;
+  color: #97c0bf;
+  text-align: center;
+  font-size: 0.55rem;
+}
+.list {
+  margin: 0 auto;
+  margin-top: 3.25rem;
+  overflow: hidden;
+  font-size: 0.65rem;
+  color: #017d7b;
+}
+.list > li {
+  padding: 0 1.2750000000000001rem;
+  margin-bottom: 0.47500000000000003rem;
+  margin-top: 0.47500000000000003rem;
+  border-top: 0.07500000000000001rem solid #017d7b;
+  border-bottom: 0.07500000000000001rem solid #017d7b;
+  color: #017d7b;
+  background: #f6f8f4;
+  position: relative;
+  padding-top: 1rem;
+  font-size: 0.65rem;
+  padding-bottom: 0.5rem;
+}
+.list > li > p:first-of-type {
+  border-bottom: 0.07500000000000001rem solid #017d7b;
+  padding-bottom: 0.55rem;
+  color: #017d7b;
+  font-size: 0.65rem;
+  font-weight: bold;
+}
+.list > li > p:first-of-type > span {
+  float: right;
+  color: #48cc00;
+  margin-left: 0.25rem;
+}
+.list > li > p {
+  color: #017d7b;
+  font-size: 0.65rem;
+  font-weight: bold;
+}
+.list > li > p span {
+  color: inherit;
+  float: none;
+  margin-left: 0;
+}
+.list > li ol {
+  margin-bottom: 0.47500000000000003rem;
+}
+.list > li ol li {
+  width: 64%;
+  line-height: 1.75rem;
+}
+.list > li ol li span,
+.list > li ol li a {
+  display: inline-block;
+  vertical-align: top ;
+  line-height: 1rem;
+}
+.list > li ol li a {
+  color: inherit;
+  vertical-align: top;
+}
+.list > li ol li span {
+  font-weight: bold;
+  color: #48cc00;
+  word-wrap: break-word;
+  width: 5.5rem;
+}
+.list > li .btnn,
+.list > li .btnn1 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  padding-right: 1.2750000000000001rem;
+}
+.list > li .btnn p,
+.list > li .btnn1 p {
+  position: absolute;
+  top: 3.25rem;
+  right: 1.2750000000000001rem;
+  background: #fff;
+  font-weight: bold;
+  padding: 0.125rem 0.25rem;
+  color: #017d7b;
+  float: right;
+}
+.list > li .btnn a,
+.list > li .btnn1 a {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 1.2750000000000001rem;
+  background: #017d7b;
+  letter-spacing: 0.025rem;
+  color: #fff;
+  padding: 0.125rem 0.325rem;
+  color: #fff;
+  float: right;
+  border-radius: 0.25rem;
+}
+.list > li .btnn > a:nth-of-type(2),
+.list > li .btnn1 > a:nth-of-type(2) {
+  bottom: 5.525rem;
+}
+.list > li .btnn > a:nth-of-type(3),
+.list > li .btnn1 > a:nth-of-type(3) {
+  bottom: 3.025rem;
+}
+.list > li .ok {
+  color: #57d04a !important;
+}
+.list > li .no_ok {
+  color: #df5643!important;
+}
+.list > li .wait_ok {
+  color: #f1b300 !important;
+}
+#loadmore img {
+  vertical-align: middle;
+  margin-right: 0.3rem;
+}
+.box {
+  width: 16.85rem !important;
+  left: 0.925rem;
+  top: 3.375rem;
+}
+.window,
+.window2 {
+  box-sizing: content-box;
+}

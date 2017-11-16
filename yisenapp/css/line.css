@@ -1,0 +1,61 @@
+.top {
+  height: 2.25rem;
+  border: 1px solid #97c0bf;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  color: #017d7b;
+  letter-spacing: 0.05rem;
+  line-height: 2.25rem;
+  background: #f6f8f4;
+  position: relative;
+  font-size: 0.8500000000000001rem;
+}
+.top img {
+  position: absolute;
+  top: 0.65rem;
+  left: 1.2750000000000001rem;
+  width: 0.7000000000000001rem;
+  height: 1.0250000000000001rem;
+}
+body {
+  color: #017d7b;
+  font-size: 0.65rem;
+}
+.c {
+  color: #017d7b;
+}
+body button {
+  color: #fff;
+  background: #017d7b;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  outline: none;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.125rem;
+  font-size: 1rem;
+  margin-left: 0.45rem;
+}
+ol {
+  padding: 0 0.675rem;
+}
+ol li {
+  position: relative;
+  margin: 0.5rem 0;
+}
+ol li span:first-of-type {
+  font-weight: bold;
+  font-size: 0.7000000000000001rem;
+  margin-right: 0.125rem;
+}
+input {
+  padding: 0.1rem 0;
+  padding-left: 0.1rem;
+  width: 4rem;
+  border: 1px solid #017d7b;
+  border-radius: 0.125rem;
+  font-size: 0.7000000000000001rem;
+  color: #017d7b;
+}

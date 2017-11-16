@@ -1,0 +1,377 @@
+.trsn {
+  transition: all .2s;
+  -webkit-transition: all .2s;
+}
+.icon {
+  background: url(../images/icon.png) no-repeat;
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  background-size: 18.5px 185px;
+}
+.banner img {
+  width: 100%;
+  display: block;
+}
+.dataTitle,
+.dataTitle1,
+.dataTitle2 {
+  line-height: 42px;
+  font-size: 17px;
+  text-align: center;
+}
+.chooseBox {
+  padding-top: 22px;
+  overflow: hidden;
+}
+.chooseBox span {
+  float: left;
+  font-size: 12px;
+  height: 25px;
+  position: relative;
+  line-height: 21px;
+  border: 2px solid #BDBDBD;
+  margin-right: 10px;
+  margin-bottom: 22px;
+  padding: 0 14px;
+}
+.chooseBox span.active {
+  position: relative;
+  border-color: #1fc482;
+}
+.chooseBox span.active:after {
+  content: "";
+  background: url(../images/icon.png) no-repeat;
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  background-size: 18.5px 185px;
+  width: 13px;
+  height: 10px;
+  background-position: 0 -34.5px;
+  position: absolute;
+  top: auto;
+  bottom: -2px;
+  right: -1px;
+}
+.chooseBox span i.bge {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1FC482;
+}
+.chooseBox span i.bge.r {
+  background: #FF5053;
+}
+.dataTable,
+.dataTable1,
+.dataTable2 {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+.dataTable + table,
+.dataTable1 + table,
+.dataTable2 + table {
+  margin-top: 10px;
+}
+.dataTable th,
+.dataTable1 th,
+.dataTable2 th {
+  color: #fff;
+  background: #1FC482;
+}
+.dataTable tr th,
+.dataTable1 tr th,
+.dataTable2 tr th {
+  border-right-color: #fff;
+}
+.dataTable tr th:last-of-type,
+.dataTable1 tr th:last-of-type,
+.dataTable2 tr th:last-of-type {
+  border-right-color: #1FC482;
+}
+.dataTable th,
+.dataTable1 th,
+.dataTable2 th,
+.dataTable td,
+.dataTable1 td,
+.dataTable2 td {
+  padding: 10px 4px;
+  border: 1px solid #1fc482;
+  font-size: 13px;
+}
+.dataTable td .icon,
+.dataTable1 td .icon,
+.dataTable2 td .icon {
+  width: 15px;
+  height: 15px;
+  background-position: 0 -73.5px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.dataTable .date,
+.dataTable1 .date,
+.dataTable2 .date {
+  color: #09527b;
+  font-weight: bold;
+}
+.dataTable .time,
+.dataTable1 .time,
+.dataTable2 .time {
+  color: #1fc482;
+}
+.dataTable._2 tr td:first-of-type,
+.dataTable1._2 tr td:first-of-type,
+.dataTable2._2 tr td:first-of-type {
+  color: #ffca28;
+  font-weight: bold;
+}
+.dataTable._2 tr td:nth-of-type(2),
+.dataTable1._2 tr td:nth-of-type(2),
+.dataTable2._2 tr td:nth-of-type(2) {
+  color: #09527b;
+  font-weight: bold;
+}
+.lisenerData {
+  padding-bottom: 30px;
+}
+.lisenerData.state .dataTable th {
+  background: #1FC482;
+  color: #fff;
+  /*border: 1px solid #1FC482;*/
+}
+.lisenerData.state .dataTable tr th:last-of-type,
+.lisenerData.state .dataTable tr td:last-of-type {
+  width: 75px;
+}
+.dataTable .kg.off-gray {
+  background: #b5b5b5;
+  box-shadow: 0 0 10px 0 #979797 inset;
+  -webkit-box-shadow: 0 0 10px 0 #979797 inset;
+}
+.dataTable .kg.off-gray:before {
+  left: 22px;
+}
+.dataTable .kg.off-gray .icon {
+  display: none;
+}
+.tableBtn {
+  color: #b5b5b5;
+  font-size: 12px;
+  border-radius: 50px;
+  padding: 4px 10px;
+  border: 1px solid #b5b5b5;
+}
+.tab {
+  padding: 19px 0;
+  overflow: hidden;
+}
+.tab a {
+  float: left;
+  width: 50%;
+  height: 29px;
+  transition: all .2s;
+  -webkit-transition: all .2s;
+  line-height: 27px;
+  border: 1px solid #1FC482;
+  text-align: center;
+}
+.tab a:first-of-type {
+  border-radius: 5px 0 0 5px;
+}
+.tab a:last-of-type {
+  border-radius: 0 5px 5px 0;
+}
+.tab a.active {
+  background: #1FC482;
+  color: #fff;
+}
+.detail .dataTable {
+  display: none;
+}
+.detail .dataTable.active {
+  display: table;
+}
+.setTime {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.setTime li {
+  padding-top: inherit;
+  padding-bottom: inherit;
+}
+.setTime li div {
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ebfaf5;
+  line-height: 35px;
+  height: 35px;
+  padding: 0 15px;
+}
+.setTime li div .icon {
+  width: 15px;
+  height: 15px;
+  background-position: 0 -58.5px;
+  vertical-align: middle;
+  top: -2px;
+  margin-right: 10px;
+}
+.setTime li div .right {
+  font-weight: bold;
+  color: #1FC482;
+  padding-left: 15px;
+  line-height: 24px;
+  border-left: 1px solid #1FC482;
+  position: relative;
+  top: 4.5px;
+  padding-right: 30px;
+}
+.setTime li div .right:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 7px;
+  border: 8px solid transparent;
+  border-top-color: #1FC482;
+}
+.module.detail {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.module.detail .dataTable {
+  width: 100%;
+}
+.module.detail .dataTable tr td:first-of-type,
+.module.detail .dataTable tr th:first-of-type {
+  width: 20%;
+}
+.module.detail .dataTable tr td .data,
+.module.detail .dataTable tr th .data,
+.module.detail .dataTable tr td .time,
+.module.detail .dataTable tr th .time {
+  font-size: 12px;
+}
+.window._s .before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.window._s .dialog {
+  width: 80%;
+  left: 10%;
+  border: 0;
+}
+.window._s .dialog > p:first-child {
+  background: #1FC482;
+  color: #fff;
+  margin: 0 -22px;
+  text-align: center;
+}
+.window._s .dialog > p:first-child i {
+  position: absolute;
+  right: 18px;
+  width: 27px;
+  height: 18px;
+  top: 21px;
+}
+.window._s .dialog > p:first-child i:before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: #fff;
+  transform: rotate(45deg);
+  position: absolute;
+}
+.window._s .dialog > p:first-child i:after {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: #fff;
+  transform: rotate(-45deg);
+  position: absolute;
+}
+.window._s .dialog input[type=password] {
+  margin-top: 40px;
+  border: 0;
+  border-bottom: 1px solid #1FC482;
+  border-radius: 0;
+  line-height: 40px;
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  padding-left: 10px;
+}
+.window._s .dialog span {
+  font-size: 13px;
+}
+.window._s .dialog .state {
+  line-height: 50px;
+  text-align: center;
+}
+.window._s .dialog .state ~ .btnBox {
+  padding: 0;
+}
+.window._s .dialog .state span {
+  display: inline-block;
+}
+.window._s .dialog .state span:after {
+  content: '';
+  background: url(../images/dot_03.png);
+  background-position: -19px 0;
+  background-size: 74.5px 19px;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  margin: 0 13px 0 8px;
+}
+.window._s .dialog .state span.green:after {
+  background-position: 0 0;
+}
+.window._s .dialog .state span.yellow:after {
+  background-position: -37px 0;
+}
+.window._s .dialog .state span.rred:after {
+  background-position: -55.8px 0;
+}
+.window._s .dialog .pl > div {
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+}
+.window._s .dialog .pl > div input {
+  display: inline-block;
+  margin: 0 5px;
+  height: 24px;
+  padding: 0;
+  text-align: center;
+  line-height: 22px;
+  border-radius: 0;
+  border: 1px solid #1FC482;
+  width: 75px;
+  font-size: 12px;
+}
+.window._s .dialog .pl > div * {
+  vertical-align: middle;
+}
+.window._s .dialog .pl + .btnBox button {
+  margin-top: 9px;
+}
+.window._s .dialog span.msg {
+  text-align: center;
+  line-height: 34px;
+  color: #fb5c42;
+  font-size: 12px;
+  display: block;
+}
+/*# sourceMappingURL=data.css.map */

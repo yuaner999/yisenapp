@@ -1,0 +1,33 @@
+body {
+  height: auto!important;
+}
+.on {
+  height: 2rem;
+  border-bottom: 1px solid #97c0bf;
+  text-align: center;
+  line-height: 2rem;
+  position: relative;
+  background: #f6f8f4;
+}
+.on p {
+  display: inline-block;
+  font-size: 0.7000000000000001rem;
+  color: #97c0bf;
+}
+.on p b {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 0.275rem solid transparent;
+  border-top-color: #97c0bf;
+  position: relative;
+  top: 0.17500000000000002rem;
+  margin-left: 0.07500000000000001rem;
+}
+.on img {
+  position: absolute;
+  width: 0.9750000000000001rem;
+  height: 0.9750000000000001rem;
+  top: 0.42500000000000004rem;
+  right: 1.2750000000000001rem;
+}

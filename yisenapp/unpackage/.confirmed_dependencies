@@ -1,0 +1,355 @@
+{
+	"index.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"Login.html",
+			"SelectScene.html"
+		],
+		"refer": [
+			"Login.html",
+			"SelectScene.html"
+		]
+	},
+	"Login.html": {
+		"resources": [
+			"js/pageJs/Login.js",
+			"js/less.js",
+			"images/logo_03.png",
+			"layer/skin/default/loading-1.gif",
+			"images/bground_02.png",
+			"css/login.less",
+			"js/jquery.md5.js",
+			"js/common.js",
+			"layer/skin/layer.css",
+			"css/common.css",
+			"js/jquery-1.11.1.min.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"layer/layer.js",
+			"js/mobilesize.js",
+			"index.html",
+			"js/getToken.js",
+			"images/right_05.png",
+			"images/headBg_02.png",
+			"images/right_14.png",
+			"SelectScene.html",
+			"css/login.css",
+			"fonts/mui.ttf",
+			"images/icon.png",
+			"images/login_02.jpg",
+			"images/en_03.png"
+		],
+		"refer": [
+			"index.html",
+			"SelectScene.html"
+		]
+	},
+	"SelectScene.html": {
+		"resources": [
+			"js/getToken.js",
+			"js/pageJs/SelectScene.js",
+			"layer/skin/default/loading-1.gif",
+			"js/jquery.md5.js",
+			"layer/skin/layer.css",
+			"js/common.js",
+			"js/jquery-1.11.1.min.js",
+			"css/common.css",
+			"layer/layer.js",
+			"css/forget.less",
+			"User.html",
+			"images/img_06.png",
+			"images/img_061.png",
+			"js/mui_push2.js",
+			"homepage.html",
+			"css/chooseLocation.css",
+			"images/marker.png"
+		],
+		"refer": [
+			"User.html",
+			"homepage.html"
+		]
+	},
+	"User.html": {
+		"resources": [
+			"js/less.js",
+			"images/user_06_06.png",
+			"js/pageJs/checkMessageStatus2.js",
+			"layer/skin/default/loading-2.gif",
+			"css/forget.less",
+			"js/pageJs/checkMessageStatus.js",
+			"images/navimg_03.png",
+			"images/navimg_06.png",
+			"images/photo_03.png",
+			"js/mui_push.js",
+			"js/jquery.md5.js",
+			"layer/skin/layer.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"js/jquery-1.11.1.min.js",
+			"js/getToken.js",
+			"css/mui.min.css",
+			"layer/layer.js",
+			"js/mobilesize.js",
+			"js/pageJs/User.js",
+			"images/right_07.png",
+			"images/navimg_09.png",
+			"homepage.html",
+			"message_info.html",
+			"images/userIcon.png",
+			"js/ajaxfileupload.js",
+			"images/usercenter_03.png",
+			"css/user.css",
+			"layer/skin/default/icon.png",
+			"Login.html"
+		],
+		"refer": [
+			"homepage.html",
+			"message_info.html",
+			"Login.html"
+		]
+	},
+	"statistical.html": {
+		"resources": [
+			"js/less.js",
+			"js/pageJs/checkMessageStatus2.js",
+			"css/statistical.less",
+			"css/forget.less",
+			"js/pageJs/checkMessageStatus.js",
+			"js/pageJs/ModifyPwd.js",
+			"js/jquery.md5.js",
+			"layer/skin/layer.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"js/jquery-1.11.1.min.js",
+			"js/getToken.js",
+			"css/mui.min.css",
+			"layer/layer.js",
+			"images/home_03.png",
+			"js/statistical.js",
+			"js/pageJs/statistical.js",
+			"js/mobilesize.js",
+			"chart/Chart-1.0.1-beta.4.js",
+			"js/mui_push2.js",
+			"homepage.html"
+		],
+		"refer": [
+			"homepage.html"
+		]
+	},
+	"homepage.html": {
+		"resources": [
+			"js/less.js",
+			"js/date.js",
+			"js/pageJs/checkMessageStatus2.js",
+			"css/statistical.less",
+			"css/forget.less",
+			"js/pageJs/Scene.js",
+			"js/pageJs/checkMessageStatus.js",
+			"images/navimgg_06.png",
+			"js/pageJs/ModifyPwd.js",
+			"js/mui_push.js",
+			"images/shebeitu.jpg",
+			"js/jquery.md5.js",
+			"layer/skin/layer.css",
+			"js/common.js",
+			"css/homepage.less",
+			"statistical.html",
+			"js/mui.min.js",
+			"js/jquery-1.11.1.min.js",
+			"js/getToken.js",
+			"css/mui.min.css",
+			"layer/layer.js",
+			"images/image_03.png",
+			"images/navimg_09_03.png",
+			"js/mobilesize.js",
+			"report.html",
+			"js/appExit.js",
+			"js/commonFn.js",
+			"images/tabIcon.png",
+			"chart/jquery-1.11.1.js",
+			"layer/skin/default/loading-2.gif",
+			"css/inform.css",
+			"css/data.css",
+			"images/dot_03.png",
+			"SelectScene.html",
+			"css/common.css",
+			"layer/skin/default/icon.png",
+			"User.html",
+			"workControl.html"
+		],
+		"refer": [
+			"statistical.html",
+			"report.html",
+			"SelectScene.html",
+			"User.html",
+			"workControl.html"
+		]
+	},
+	"report.html": {
+		"resources": [
+			"images/navimg_03_09.png",
+			"js/nav.js",
+			"css/statistical2.less",
+			"workControl.html",
+			"css/report.less",
+			"js/pageJs/Report.js",
+			"js/less.js",
+			"js/date.js",
+			"js/pageJs/checkMessageStatus2.js",
+			"css/forget.less",
+			"js/pageJs/checkMessageStatus.js",
+			"js/pageJs/ModifyPwd.js",
+			"js/mui_push.js",
+			"js/jquery.md5.js",
+			"layer/skin/layer.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"js/jquery-1.11.1.min.js",
+			"js/getToken.js",
+			"css/mui.min.css",
+			"layer/layer.js",
+			"js/mobilesize.js",
+			"message_info.html"
+		],
+		"refer": [
+			"workControl.html",
+			"message_info.html"
+		]
+	},
+	"workControl.html": {
+		"resources": [
+			"images/navimg_09_12.png",
+			"message_info.html",
+			"repair_info.html",
+			"images/home_03.png",
+			"js/pageJs/workControl.js",
+			"images/img.png",
+			"js/pageJs/checkMessageStatus2.js",
+			"images/tabIcon.png",
+			"css/app.css",
+			"layer/skin/default/loading-2.gif",
+			"js/pageJs/checkMessageStatus.js",
+			"images/app_all.png",
+			"homepage.html"
+		],
+		"refer": [
+			"message_info.html",
+			"repair_info.html",
+			"homepage.html"
+		]
+	},
+	"messages.html": {
+		"resources": [
+			"js/pageJs/message.js",
+			"message_info.html",
+			"kindeditor/kindeditor.js",
+			"css/table01.less",
+			"kindeditor/themes/default/default.css",
+			"kindeditor/lang/zh_CN.js"
+		],
+		"refer": [
+			"message_info.html"
+		]
+	},
+	"message_info.html": {
+		"resources": [
+			"messages.html",
+			"js/selectdate.js",
+			"images/loading.gif",
+			"js/pageJs/messageinfo.js",
+			"css/selectdate.less",
+			"workControl.html",
+			"js/less.js",
+			"css/forget.less",
+			"images/navimgg_06.png",
+			"js/jquery.md5.js",
+			"layer/skin/layer.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"js/jquery-1.11.1.min.js",
+			"js/getToken.js",
+			"images/navimg_09_12.png",
+			"css/mui.min.css",
+			"layer/layer.js",
+			"js/mobilesize.js",
+			"js/mui_push2.js",
+			"report.html",
+			"sendmessages.html",
+			"js/mui_push3.js"
+		],
+		"refer": [
+			"messages.html",
+			"workControl.html",
+			"report.html",
+			"sendmessages.html"
+		]
+	},
+	"repair_info.html": {
+		"resources": [
+			"js/pageJs/repairinfo.js",
+			"modifyRepair.html"
+		],
+		"refer": [
+			"modifyRepair.html"
+		]
+	},
+	"modifyRepair.html": {
+		"resources": [
+			"repair_info.html",
+			"laydate/laydate.js",
+			"js/pageJs/modifyRepair.js",
+			"laydate/skins/danlan/laydate.css",
+			"laydate/need/laydate.css"
+		],
+		"refer": [
+			"repair_info.html"
+		]
+	},
+	"sendmessages.html": {
+		"resources": [
+			"js/pageJs/getEmp.js",
+			"message_info.html"
+		],
+		"refer": [
+			"message_info.html"
+		]
+	},
+	"task_info.html": {
+		"resources": [
+			"js/selectdate.js",
+			"js/date.js",
+			"images/icon.png",
+			"js/pageJs/taskinfo.js",
+			"fonts/mui.ttf",
+			"js/mui_push2.js",
+			"workControl.html"
+		],
+		"refer": [
+			"workControl.html"
+		]
+	},
+	"task.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"task_info.html",
+			"js/jquery.md5.js",
+			"layer/skin/layer.css",
+			"js/common.js",
+			"images/back_03.png",
+			"js/mui.min.js",
+			"css/common.css",
+			"js/jquery-1.11.1.min.js",
+			"js/getToken.js",
+			"css/mui.min.css",
+			"layer/layer.js",
+			"css/inform.css",
+			"js/pageJs/task.js",
+			"js/mobilesize.js",
+			"css/form.css"
+		],
+		"refer": [
+			"task_info.html"
+		]
+	}
+}

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/forget.css"/>
+		<link rel="stylesheet" type="text/css" href="css/selectdate.css"/>
+		<link rel="stylesheet" type="text/css" href="css/newselect.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+		 
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+			<!--头 -->
+	        <div class="top">
+				<a href="Login.html"><img src="images/img_06.png"/></a>
+				巡检记录
+	        </div>
+	    <div class="box">
+	        <div class="on">
+	            <p><b></b></p>
+	        </div>
+	        <div class="lnag">
+	        	～
+	        </div>
+	        <div class="on2">
+	            <p>das <b></b></p>
+	        </div>
+			<div class="window">
+		    	<div class="date">
+		    		<div>
+		    			<select name="year" class="year">
+		    			</select>
+		    			<div><b></b></div>
+		    		</div>
+		    		<div>
+		    			<select name="" class="month">
+		    			</select>
+		    			<div><b></b></div>
+		    		</div>
+		    		<p>开始日期</p>
+		    	</div>
+		    	<ul class="week">
+		    		<li>周日</li>
+		    		<li>周一</li>
+		    		<li>周二</li>
+		    		<li>周三</li>
+		    		<li>周四</li>
+		    		<li>周五</li>
+		    		<li>周六</li>	
+		    	</ul>
+		    	<ol class="day">
+		    		<li></li>
+		    	</ol>
+		    </div>
+		    <div class="window2">
+		    	<div class="date">
+		    		<div>
+		    			<select name="year" class="year">
+		    			</select>
+		    			<div><b></b></div>
+		    		</div>
+		    		<div>
+		    			<select name="" class="month">
+		    			</select>
+		    			<div><b></b></div>
+		    		</div>
+		    		<p>结束日期</p>
+		    	</div>
+		    	<ul class="week">
+		    		<li>周日</li>
+		    		<li>周一</li>
+		    		<li>周二</li>
+		    		<li>周三</li>
+		    		<li>周四</li>
+		    		<li>周五</li>
+		    		<li>周六</li>	
+		    	</ul>
+		    	<ol class="day">
+		    		<li></li>
+		    	</ol>
+		    </div>
+		</div>
+		<ul class="list">
+			<a href="">
+        		<li>
+        			<div class="ok">
+        				<img src="images/green_03.png"/>
+        				已完成
+        			</div>
+        			<p>巡检周检</p>
+        			<span>2016-12-32</span>
+        			<b></b>
+        		</li>
+        	</a>
+        	<a href="">
+        		<li>
+        			<div class="no_ok">
+        				<img src="images/yellow_06.png"/>
+        				收到
+        			</div>
+        			<p>巡检周检</p>
+        			<span>2016-12-32</span>
+        			<b></b>
+        		</li>
+        	</a>
+        	<a href="">
+        		<li>
+        			<div class="wait_ok">
+        				<img src="images/red_03.png"/>
+        				维修中
+        			</div>
+        			<p>巡检周检</p>
+        			<span>2016-12-32</span>
+        			<b></b>
+        		</li>
+        	</a>
+        	<a href="">
+        		<li>
+        			<div class="blue">
+        				<img src="images/blue_03.png"/>
+        				发起
+        			</div>
+        			<p>巡检周检</p>
+        			<span>2016-12-32</span>
+        			<b></b>
+        		</li>
+        	</a>
+		</ul>
+	    <script type="text/javascript">
+	    	//日期
+			$(".on p").click(function  () {
+				$(".window").fadeIn(0);
+				$(".window2").fadeOut(0);
+			})
+			var now=new Date();
+			var nowyear=now.getFullYear();
+			var aYear=new Array;
+			//循环添加年
+			for(i=0;i<11;i++){
+				aYear.push(nowyear-10+i);
+				var op=$("<option></option>");
+				$(op).appendTo($(".window .year"));
+				$(op).text(aYear[i]);
+				if($(op).text()==nowyear){
+					$(op).attr("selected","selected");
+				}
+			}
+			//循环添加月
+			var nowmonth=now.getMonth()+1;
+			for(i=1;i<13;i++){
+				var op=$("<option></option>");
+				$(op).appendTo($(".window .month"));
+				if(i<10){
+					$(op).text("0"+i);
+				}else{
+					$(op).text(i);
+				}
+				if($(op).text()==nowmonth||$(op).text()=="0"+nowmonth){
+					$(op).attr("selected","selected");
+				}
+				
+			}
+			//循环添加日
+			var beginday=new Date();
+			beginday.setDate(1);
+			var month=["31","28","31","30","31","30","31","31","30","31","30","31"];
+			function isLeapYear (Year) {
+				if (((Year % 4)==0) && ((Year % 100)!=0) || ((Year % 400)==0)) {
+				return (true);
+				} else { return (false); }
+			}
+			if(isLeapYear(beginday.getFullYear())){
+				month[1]=29;
+			}
+			for(i=0;i<beginday.getDay();i++){
+				$("<li><a></a></li>").appendTo($(".window .day"));
+			}
+			for(i=0;i<month[beginday.getMonth()+1];i++){
+				$("<li><a></a></li>").appendTo($(".window .day"));
+			}
+			for(i=0;i<month[now.getMonth()];i++){
+				$(".window .day li ").eq(beginday.getDay()+i).children("a").text(i+1)
+			}
+			//初始化头部的日期
+			var d=now.getDate();
+			if(d<10){
+				d="0"+d;
+			}
+			$(".on p").html($(".window .year").val()+"-"+$(".window .month").val()+"-"+d+"<b></b>");
+			//网页样式
+			$(".window .day").css("height",Math.ceil($(".window .day li").length/7)*2+"rem");
+			for(i=0;i<$(".day li").length/7+1;i++){
+				$(".window .day li").eq(0+i*7).children("a").css("color","#017d7b");
+				$(".window .day li").eq(6+i*7).children("a").css("color","#017d7b")
+			}
+			$(".window .day li").eq(now.getDate()+beginday.getDay()-1).children("a").css({"background":"#017d7b","color":"#fff"});
+			$(".window .year,.month").change(function  () {
+					$(".window .day li").remove();
+					//循环添加日
+					var beginday=new Date();
+					beginday.setFullYear($(".window .year").val());
+					beginday.setMonth($(".window .month").val()-1,1);
+					var month=["31","28","31","30","31","30","31","31","30","31","30","31"];
+					function isLeapYear (Year) {
+						if (((Year % 4)==0) && ((Year % 100)!=0) || ((Year % 400)==0)) {
+						return (true);
+						} else { return (false); }
+					}
+					if(isLeapYear(beginday.getFullYear())){
+						month[1]=29;
+					}
+					for(i=0;i<beginday.getDay();i++){
+						$("<li><a></a></li>").appendTo($(".window .day"));
+					}
+					for(i=0;i<month[$(".month").val()-1];i++){
+						$("<li><a></a></li>").appendTo($(".window .day"));
+					}
+					for(i=0;i<month[$(".window .month").val()-1];i++){
+						$(".window .day li ").eq(beginday.getDay()+i).children("a").text(i+1)
+					}
+					//网页样式
+					$(".window .day").css("height",Math.ceil($(".window .day li").length/7)*2+"rem");
+					for(i=0;i<$(".window .day li").length/7+1;i++){
+						$(".window .day li").eq(0+i*7).children("a").css("color","#017d7b");
+						$(".window .day li").eq(6+i*7).children("a").css("color","#017d7b")
+					}
+					$(".window .day li").eq(beginday.getDate()+beginday.getDay()-1).children("a").css({"background":"#017d7b","color":"#fff"});
+					$(".window .day li a").click(function  () {
+						$(this).parent().siblings().children("a").css({"background":"#fff","color":"#97c0bf"});
+						for(i=0;i<$(".window.day li").length/7+1;i++){
+							$(".window .day li").eq(0+i*7).children("a").css("color","#017d7b");
+							$(".window .day li").eq(6+i*7).children("a").css("color","#017d7b")
+						}
+						$(this).css({"background":"#017d7b","color":"#fff"});
+						$(".black,.window").fadeOut(0);
+						var d=$(this).text()
+						if($(this).text()<10){
+							d="0"+d;
+						}
+						$(".on p").html($(".window .year").val()+"-"+$(".window .month").val()+"-"+d+"<b></b>");
+					})
+			})
+			$(".window .day li a").click(function  () {
+				$(this).parent().siblings().children("a").css({"background":"#fff","color":"#97c0bf"});
+				for(i=0;i<$(".window .day li").length/7+1;i++){
+					$(".window .day li").eq(0+i*7).children("a").css("color","#017d7b");
+					$(".window .day li").eq(6+i*7).children("a").css("color","#017d7b")
+				}
+				$(this).css({"background":"#017d7b","color":"#fff"});
+				$(".black,.window").fadeOut(0);
+				var d=$(this).text()
+				if($(this).text()<10){
+					d="0"+d;
+				}
+				$(".on p").html($(".window .year").val()+"-"+$(".window .month").val()+"-"+d+"<b></b>");
+			})
+			//日期
+			$(".on2 p").click(function  () {
+				$(".window2").fadeIn(0);
+				$(".window").fadeOut(0);
+			})
+			var now=new Date();
+			var nowyear=now.getFullYear();
+			var aYear=new Array;
+			//循环添加年
+			for(i=0;i<11;i++){
+				aYear.push(nowyear-10+i);
+				var op=$("<option></option>");
+				$(op).appendTo($(".window2 .year"));
+				$(op).text(aYear[i]);
+				if($(op).text()==nowyear){
+					$(op).attr("selected","selected");
+				}
+			}
+			//循环添加月
+			var nowmonth=now.getMonth()+1;
+			for(i=1;i<13;i++){
+				var op=$("<option></option>");
+				$(op).appendTo($(".window2 .month"));
+				if(i<10){
+					$(op).text("0"+i);
+				}else{
+					$(op).text(i);
+				}
+				if($(op).text()==nowmonth||$(op).text()=="0"+nowmonth){
+					$(op).attr("selected","selected");
+				}
+				
+			}
+			//循环添加日
+			var beginday=new Date();
+			beginday.setDate(1);
+			var month=["31","28","31","30","31","30","31","31","30","31","30","31"];
+			function isLeapYear (Year) {
+				if (((Year % 4)==0) && ((Year % 100)!=0) || ((Year % 400)==0)) {
+				return (true);
+				} else { return (false); }
+			}
+			if(isLeapYear(beginday.getFullYear())){
+				month[1]=29;
+			}
+			for(i=0;i<beginday.getDay();i++){
+				$("<li><a></a></li>").appendTo($(".window2 .day"));
+			}
+			for(i=0;i<month[beginday.getMonth()+1];i++){
+				$("<li><a></a></li>").appendTo($(".window2 .day"));
+			}
+			for(i=0;i<month[now.getMonth()];i++){
+				$(".window2 .day li ").eq(beginday.getDay()+i).children("a").text(i+1)
+			}
+			//初始化头部的日期
+			var d=now.getDate();
+			if(d<10){
+				d="0"+d;
+			}
+			$(".on2 p").html($(".window2 .year").val()+"-"+$(".window2 .month").val()+"-"+d+"<b></b>");
+			//网页样式
+			$(".window2 .day").css("height",Math.ceil($(".window2 .day li").length/7)*2+"rem");
+			for(i=0;i<$(".window2 .day li").length/7+1;i++){
+				$(".window2 .day li").eq(0+i*7).children("a").css("color","#017d7b");
+				$(".window2 .day li").eq(6+i*7).children("a").css("color","#017d7b")
+			}
+			$(".window2 .day li").eq(now.getDate()+beginday.getDay()-1).children("a").css({"background":"#017d7b","color":"#fff"});
+			$(".window2 .year,.month").change(function  () {
+					$(".window2 .day li").remove();
+					//循环添加日
+					var beginday=new Date();
+					beginday.setFullYear($(".window2 .year").val());
+					beginday.setMonth($(".window2 .month").val()-1,1);
+					var month=["31","28","31","30","31","30","31","31","30","31","30","31"];
+					function isLeapYear (Year) {
+						if (((Year % 4)==0) && ((Year % 100)!=0) || ((Year % 400)==0)) {
+						return (true);
+						} else { return (false); }
+					}
+					if(isLeapYear(beginday.getFullYear())){
+						month[1]=29;
+					}
+					for(i=0;i<beginday.getDay();i++){
+						$("<li><a></a></li>").appendTo($(".window2 .day"));
+					}
+					for(i=0;i<month[$(".window2 .month").val()-1];i++){
+						$("<li><a></a></li>").appendTo($(".window2 .day"));
+					}
+					for(i=0;i<month[$(".window2 .month").val()-1];i++){
+						$(".window2 .day li ").eq(beginday.getDay()+i).children("a").text(i+1)
+					}
+					//网页样式
+					$(".window2 .day").css("height",Math.ceil($(".window2 .day li").length/7)*2+"rem");
+					for(i=0;i<$(".window2 .day li").length/7+1;i++){
+						$(".window2 .day li").eq(0+i*7).children("a").css("color","#017d7b");
+						$(".window2 .day li").eq(6+i*7).children("a").css("color","#017d7b")
+					}
+					$(".window2 .day li").eq(beginday.getDate()+beginday.getDay()-1).children("a").css({"background":"#017d7b","color":"#fff"});
+					$(".window2 .day li a").click(function  () {
+						$(this).parent().siblings().children("a").css({"background":"#fff","color":"#97c0bf"});
+						for(i=0;i<$(".window2 .day li").length/7+1;i++){
+							$(".window2 .day li").eq(0+i*7).children("a").css("color","#017d7b");
+							$(".window2 .day li").eq(6+i*7).children("a").css("color","#017d7b")
+						}
+						$(this).css({"background":"#017d7b","color":"#fff"});
+						$(".black,.window2").fadeOut(0);
+						var d=$(this).text()
+						if($(this).text()<10){
+							d="0"+d;
+						}
+						$(".on p2").html($(".year").val()+"-"+$(".window2 .month").val()+"-"+d+"<b></b>");
+					})
+			})
+			$(".window2 .day li a").click(function  () {
+				$(this).parent().siblings().children("a").css({"background":"#fff","color":"#97c0bf"});
+				for(i=0;i<$(".window2 .day li").length/7+1;i++){
+					$(".window2 .day li").eq(0+i*7).children("a").css("color","#017d7b");
+					$(".window2 .day li").eq(6+i*7).children("a").css("color","#017d7b")
+				}
+				$(this).css({"background":"#017d7b","color":"#fff"});
+				$(".black,.window2").fadeOut(0);
+				var d=$(this).text()
+				if($(this).text()<10){
+					d="0"+d;
+				}
+				$(".on2 p").html($(".window2 .year").val()+"-"+$(".window2 .month").val()+"-"+d+"<b></b>");
+			})
+	    </script>
+	    <script src="js/mui.min.js"></script>
+		<script src="js/mui_push2.js"></script>
+	</body>
+</html>

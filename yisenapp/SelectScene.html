@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui_push2.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/chooseLocation.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="layer/layer.js"></script>
+		<script type="text/javascript" src="js/jquery.md5.js"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/getToken.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ofKs6yxGSFCwN9mSSzq61e4pMuZIheaZ"></script>
+		<script type="text/javascript" src="js/pageJs/SelectScene.js"></script>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<!--<span class="gray">仅硝魔方现场</span>-->
+			<!--<a href="homepage.html" class="mui-icon mui-icon-left-nav"></a>-->
+			<h1 class="mui-title">现场地图</h1>
+			<span class="green" id="btnOnly" onclick="btnOnlyClick()">仅查看硝魔方</span>
+		</header>
+		<div id="l-map" style="height: 98%; width: 100%;"></div>
+		<div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+
+		<div class="locationList">
+			<p>
+				<span>当前现场共有</span>
+				<span class="right" id="showNum">
+				<mark>--</mark>家
+			</span>
+			</p>
+			<div class="box">
+				<!--列表-->
+				<ul id="ulscene">
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//	mui.init();
+	// 百度地图API功能
+	function G(id) {
+		return document.getElementById(id);
+	}
+	var map = new BMap.Map("l-map");
+	//	var point = new BMap.Point(107.331398, 53.897445); //创建经纬度实例
+	var point = new BMap.Point(114.037916, 34.81754);
+	map.centerAndZoom(point, 5); //地图开始时的显示位置
+	map.enableScrollWheelZoom(); //网页端滚轮可用
+	function setmap() {
+		var point = new BMap.Point(114.037916, 34.81754);
+		map.centerAndZoom(point, 5); //地图开始时的显示位置
+	}
+	//手机返回键退出程序
+	appExit();
+
+	function appExit() {
+		var first = null;
+		if(!mui) return;
+		mui.back = function() {
+			//			//首次按键，提示‘再按一次退出应用’
+			//			if(!first) {
+			//				first = new Date().getTime();
+			//				mui.toast('再按一次退出应用');
+			//				setTimeout(function() {
+			//					first = null;
+			//				}, 1000);
+			//			} else {
+			//				if(new Date().getTime() - first < 1000) {
+			//					db.transaction(function(tx) {
+			//							tx.executeSql("delete from controlManage where id='localUserId'", [], function(tx, data) {});
+			//						});
+			//					if(json == null || json.length < 1) {
+			//						db.transaction(function(tx) {
+			//							tx.executeSql("drop table if exists token", [], function(tx, data) {});
+			//							tx.executeSql("drop table if exists scene", [], function(tx, data) {});
+			//							tx.executeSql("delete from controlManage where id='localUserId'", [], function(tx, data) {});
+			//							tx.executeSql("drop table if exists user", [], function(tx, data) {
+			//								window.location.href = "Login.html";
+			//							});
+			//						});
+			//					}
+			//					plus.runtime.quit();
+			//				}
+			//			}
+			layer.confirm('你确定要退出吗?', {
+				icon: 3,
+				title: '提示'
+			}, function(index) {
+
+				db.transaction(function(tx) {
+
+					tx.executeSql("drop table if exists token", [], function(tx, data) {
+
+					});
+					tx.executeSql("drop table if exists scene", [], function(tx, data) {
+
+					});
+					tx.executeSql("drop table if exists controlManage", [], function(tx, data) {
+
+					});
+					tx.executeSql("drop table if exists user", [], function(tx, data) {
+						window.location.href = "Login.html";
+					});
+				});
+				layer.close(index);
+			});
+		}
+	}
+</script>

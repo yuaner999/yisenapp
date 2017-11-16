@@ -1,0 +1,229 @@
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+
+  color: #c5d3d3;
+}
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+
+  color: #c5d3d3;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #c5d3d3;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #c5d3d3;
+}
+.top {
+  height: 2.25rem;
+  border: 1px solid #97c0bf;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  color: #017d7b;
+  letter-spacing: 0.05rem;
+  line-height: 2.25rem;
+  background: #f6f8f4;
+  position: relative;
+  font-size: 0.8500000000000001rem;
+}
+.top img {
+  position: absolute;
+  top: 0.65rem;
+  left: 1.2750000000000001rem;
+  width: 0.7000000000000001rem;
+  height: 1.0250000000000001rem;
+}
+.form {
+  width: 16.200000000000003rem;
+  margin: 0 auto;
+  margin-top: 0.375rem;
+}
+.form div {
+  padding-top: 0.25rem;
+  padding-bottom: 0.05rem;
+  border-bottom: 1px solid #017d7b;
+}
+.form div input:first-child {
+  font-size: 0.55rem;
+  border: none;
+  color: #666;
+  padding: 0.625rem 0.025rem;
+  width: 11.925rem;
+  margin-bottom: 0;
+}
+.form div input:last-child {
+  margin: 0.5rem 0;
+  font-size: 0.55rem;
+  color: #017d7b;
+  background: transparent;
+  border: 1px solid #97c0bf;
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.45rem;
+  vertical-align: middle;
+}
+.form div b {
+  float: right;
+  width: 0.875rem;
+  height: 0.875rem;
+  background: url(../images/no_18.png) no-repeat center;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  margin-top: 0.225rem;
+}
+.form > input {
+  width: 13rem;
+  background: #017d7b;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  border: none;
+  margin: 0 auto;
+  font-size: 0.7000000000000001rem;
+  color: #fff;
+  display: block;
+  margin-top: 3.25rem;
+  letter-spacing: 0.05rem;
+  border-radius: 0.30000000000000004rem;
+  padding: 0;
+}
+.foot {
+  position: fixed;
+  z-index: 100000;
+  bottom: 0;
+  width: 100%;
+  height: 3.25rem;
+  background: #f6f8f4;
+  border-top: 1px solid #97c0bf;
+}
+.foot li {
+  height: 3rem;
+  width: 20%;
+  float: left;
+  position: relative;
+}
+.foot li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 0.5rem;
+  color: #017d7b;
+  text-align: center;
+}
+.foot li a div {
+  height: 2.125rem;
+  text-align: center;
+  line-height: 2.125rem;
+}
+.foot li a span {
+  position: absolute;
+  top: 0.45rem;
+  text-align: center;
+  right: 0.75rem;
+  background: #ff7e00;
+  border-radius: 50%;
+  width: 0.725rem;
+  height: 0.675rem;
+  font-size: 0.3rem;
+  color: #fff;
+  line-height: 0.725rem;
+}
+.foot li:nth-child(1) img {
+  vertical-align: middle;
+  width: 1.2750000000000001rem;
+  height: 1.2750000000000001rem;
+}
+.foot li:nth-child(2) img {
+  vertical-align: middle;
+  width: 1.4500000000000002rem;
+  height: 1.2000000000000002rem;
+}
+.foot li:nth-child(3) img {
+  vertical-align: middle;
+  width: 1.45rem;
+  height: 1.3rem;
+}
+.foot li:nth-child(4) img {
+  vertical-align: middle;
+  width: 1.375rem;
+  height: 1.2000000000000002rem;
+}
+.foot li:nth-child(5) img {
+  vertical-align: middle;
+  width: 1.05rem;
+  height: 1.125rem;
+}
+.photo {
+  margin: 0 auto;
+  margin-top: 0.625rem;
+  margin-bottom: 0.75rem;
+  width: 5.325rem;
+  height: 5.325rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  -moz-border-radius: 50%;
+  overflow: hidden;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+}
+.chenge {
+  text-align: center;
+}
+.chenge div {
+  position: relative;
+  display: inline-block;
+  font-size: 0.6000000000000001rem;
+  color: #017d7b;
+}
+.chenge div a {
+  position: absolute;
+  top: 0;
+  right: -1.0250000000000001rem;
+  width: 0.675rem;
+  height: 0.675rem;
+  background: url(../images/chenge_03.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.info {
+  margin-top: 1.25rem;
+}
+.info li {
+  padding: 0 1.2750000000000001rem;
+  margin-bottom: 0.55rem;
+  border-top: 1px solid #97c0bf;
+  border-bottom: 1px solid #97c0bf;
+  font-size: 0.6000000000000001rem;
+  color: #017d7b;
+  line-height: 2.025rem;
+  height: 2.025rem;
+  background: #f6f8f4;
+}
+.info li span {
+  font-weight: bold;
+  position: absolute;
+  right: 2.875rem;
+  padding: 0 0.3rem;
+}
+.info li b {
+  width: 0.45rem;
+  float: right;
+  height: 100%;
+  background: url(../images/right_07.png) no-repeat center;
+  background-size: 100% auto;
+  margin-right: 0.125rem;
+}
+body {
+  background: #fff!important;
+}
+.layui-layer-loading {
+  width: 100% !important;
+  left: 0 !important;
+  text-align: center;
+}
+.layui-layer-loading > div {
+  display: inline-block;
+}

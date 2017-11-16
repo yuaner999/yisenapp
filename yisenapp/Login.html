@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/pageJs/Login.js"></script>
+		<script type="text/javascript" src="js/jquery.md5.js"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="layer/layer.js"></script>
+	</head>
+
+	<body>
+		<div class="form">
+			<div>
+				<i class="icon user"></i>
+				<input type="text" name="username" id="UserName" placeholder="账号" maxlength="16" />
+			</div>
+			<div>
+				<i class="icon pass"></i>
+				<input type="password" name="password" id="Password" placeholder="密码" maxlength="16" />
+			</div>
+			<div>
+				<div class="inline-block">
+					<span class="mui-input-row mui-radio ">
+				    <a name="a1" id="a1" onclick="changeNetWork1()">
+				    	<input id="wai" name="radio" type="radio" checked ='true'>
+					    <label for="wai">客户通道</label>
+				    </a>
+				</span>
+				</div>
+				<div class="inline-block">
+					<span class="mui-input-row mui-radio ">
+					<a name="a0" id="a0" onclick="changeNetWork2()">
+ 						<input id="nei" name="radio" type="radio">
+				  		<label for="nei">内部登录</label>
+					</a>	
+				</span>
+				</div>
+			</div>
+			<button type="button" name="Login" id="Login">登录</button>
+			<span id="test" style="display: none">clientid</span>
+			<!--忘记密码-->
+			<div class="right">
+				<a href="forget.html">
+					<i class="wh"></i>
+					<span>忘记密码</span>
+				</a>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var h=$(window).height();
+			$("body").height(h);
+			//mui 带重写返回方法
+			mui.init();
+			document.addEventListener("plusready", function() {
+				getPushInfo();
+				message = document.getElementById("message");
+				plus.push.addEventListener("click", function(msg) {
+					// 分析msg.payload处理业务逻辑 
+					// 判断是从本地创建还是离线推送的消息
+					switch(msg.payload) {
+						case "LocalMSG":
+							outSet("点击本地创建消息启动：");
+							break;
+						default:
+							outSet("点击离线推送消息启动：");
+							break;
+					}
+					// 提示点击的内容
+					plus.ui.alert(msg.content);
+					// 处理其它数据
+					logoutPushMsg(msg);
+				}, false);
+				// 监听在线消息事件---这里触发通知的监听
+				plus.push.addEventListener("receive", function(msg) {
+					//      让传过来的透传的内容为json格式
+					var pushMessage = eval("(" + msg.payload + ")");;
+					//对透传信息进行处理--暂时定为
+					if(pushMessage.type == "check") { //巡检
+						window.location = "check_info.html";
+						return;
+					}
+					if(pushMessage.type = "handover") { //接班
+						window.location = "handover_info.html";
+						return;
+					}
+					if(pushMessage.type = "handover2") { //交班
+						window.location = "handover2info.html";
+						return;
+					}
+					if(pushMessage.type = "maintain") { //保养
+						window.location = "handover.html";
+						return;
+					}
+					if(pushMessage.type = "repair") { //报修
+						window.location = "repair_info.html";
+						return;
+					}
+				}, false);
+			}, false);
+
+			function getPushInfo() {
+				var info = plus.push.getClientInfo();
+				$("#test").html(info.clientid);
+				loginAuoto(info.clientid);
+			}
+			mui.back = function() {
+				var btn = ["确定", "取消"];
+				mui.confirm('确定退出程序吗？', '友情提示', btn, function(e) {
+					if(e.index == 0) {
+						mui.currentWebview.close();
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>

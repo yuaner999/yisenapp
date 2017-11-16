@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+	 <!--是否是导航页退出appjs-->
+    <script src="js/appExit.js" type="text/javascript" charset="utf-8"></script>
+    <!--日期js-->
+    <script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="js/getToken.js" ></script>
+	<script type="text/javascript" src="layer/layer.js" ></script>
+	<script type="text/javascript" src="js/jquery.md5.js" ></script>
+    <script src="laydate/laydate.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pageJs/sendNewCheck.js" type="text/javascript" charset="utf-8"></script>
+	
+	<style type="text/css">
+		input::-webkit-input-placeholder { /* WebKit browsers*/ 
+	　　		color:#999;font-size:14px;color: #292B36;
+	　　}
+		input:-moz-placeholder {  /* Mozilla Firefox 4 to 18*/ 
+		　　color:#999;font-size:14px;color: #292B36;
+	　　}
+		input::-moz-placeholder {  /* Mozilla Firefox 19+*/ 
+		　　color:#999;font-size:14px;color: #292B36;
+	　　}
+		input:-ms-input-placeholder { /* Internet Explorer 10+*/ 
+		　　font-size:14px;color: #292B36;
+		}
+	</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-icon mui-icon-left-nav mui-pull-left" href="check_info.html"></a>
+	    <h1 class="mui-title">发起巡检</h1>
+	</header>
+	<div class="mui-content">
+		<div class="info">
+			<div class="itemInfo">
+				<b class="left">设定巡检时间：</b>
+		    	<div class="selfSelect" id="tiembutton1">
+		    		<span style="display: none;"></span>
+					<input id="date" type="text" readonly="readonly" placeholder="请选择时间"  style="height: 42px;width: 100%; border-color: #1FC482;"/> 
+		    	</div>
+			</div>
+			<div class="itemInfo">
+				<b class="left">巡检现场：</b>
+		    	<div class="selfSelect">
+			    	<select name="scene">
+	        			<option value="">请选择现场</option>
+	        		</select>
+		    	</div>
+			</div>
+			<div class="itemInfo">
+				<b class="left">巡检类型：</b>
+		    	<div class="selfSelect">
+			    	<select name="scene">
+	        			<option value="">请选择类型</option>
+	        			<option value="日检">日检</option>
+	        			<option value="周检">周检</option>
+	        			<option value="年检">年检</option>
+	        		</select>
+		    	</div>
+			</div>
+			<div class="itemInfo">
+				<b class="left justify">巡检备注：</b>
+				<textarea ></textarea>
+			</div>
+		</div>
+	    <div class="btnBox padding">
+	    	<button class="g" id="submit" onclick="submit()">发起巡检</button>
+	    </div>
+	</div>
+	<script type="text/javascript">
+//		封装好的选择日期绑定
+//		该日期是android原生日期框,需要在手机运行
+		//开始日期
+		chooseDate({
+			ele:"#tiembutton1",//触发日期弹窗的按钮
+			now:"auto",//可以写auto 为目前时间
+			minDate:"2010-01-03",//最小日期
+			maxDate:"2028-01-03"//最大日期
+		},function  (nowDate) {
+			console.log(nowDate)
+			$("#date").val(dateformat(nowDate,"yyyy-MM-dd HH:mm:ss"));
+			if(nowDate<new Date()){
+				$("#submit").attr("disabled",true);
+				layer.msg("请选择正确的时间顺序");
+				return;
+			}
+			$("#submit").attr("disabled",false);
+		},true);
+	</script>
+</body>
+</html>
+<script src="js/selectdate.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/mui_push2.js"></script>

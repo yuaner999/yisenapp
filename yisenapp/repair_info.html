@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/inform.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script src="js/getToken.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="js/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/pageJs/repairinfo.js" type="text/javascript" charset="utf-8"></script>
+		<!--日期js-->
+		<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" href="workControl.html"></a>
+			<h1 class="mui-title">报修</h1>
+			<span class="green"><a  href="sendNewRepair.html">发起报修</a></span>
+		</header>
+		<!--内容-->
+		<div class="mui-content">
+			<div class="module">
+				<div class="setTime">
+					<div>
+						<i class="icon"></i>
+						<span id="startDate"></span>
+					</div>
+					<div>
+						<i class="icon"></i>
+					</div>
+					<div>
+						<i class="icon"></i>
+						<span id="endDate"></span>
+					</div>
+				</div>
+			</div>
+			<div class="module">
+				<p class="filterTitle">筛选</p>
+				<div class="selfSelect">
+					<select name="" id="select_scene" onchange="changeScene(this)">
+						<option value="">请选择现场</option>
+					</select>
+				</div>
+				<div class="selfSelect">
+					<!--状态 0发起 1收到 2维修中 3完成 4等待审批 5审批未通过 6审批通过-->
+					<select name="" id="select_type" onchange="changeType(this)">
+						<option value="请选择状态">请选择状态</option>
+						<option value="">查看全部状态</option>
+						<option value="0">发起</option>
+						<option value="1">收到</option>
+						<option value="2">维修中</option>
+						<option value="3">完成</option>
+						<option value="4">等待审批</option>
+						<option value="5">审批未通过</option>
+						<option value="6">审批通过</option>
+					</select>
+				</div>
+			</div>
+			<!--消息列表-->
+			<div class="box">
+				<!--各种状态的信息-->
+				<!--以下罗列了各种状态-->
+				<!--	    	
+	    	<div class="infoItem">
+	    		<p>
+	    			<mark>app发起</mark>
+	    			<span class="right">
+	    				<span>2017/2/21</span> 
+	    				<span>16:18:00</span> 
+	    			</span>
+	    		</p>
+	    		<div class="info">
+	    			<b class="yellow">维修人</b>
+	    			<b>石振业</b>
+	    			<!--深蓝-->
+				<!--<span class="blue right">审批通过</span>
+	    		</div>
+	    		<ul>
+	    			<li>
+	    				<span>现场名称</span>
+	    				<span>2</span>
+	    			</li>
+	    			<li>
+	    				<span>设备名称</span>
+	    				<span>新兴港在线</span>
+	    			</li>
+	    			<li>
+	    				<span>设备部件</span>
+	    				<span>二氧化碳</span>
+	    			</li>
+	    		</ul>
+	    		<div class="btnBox">
+	    			<button class="blockBox y">推迟完成时间</button>
+	    			<button class="blockBox g">查看详情</button>
+	    			<button class="blockBox b">设定完成的时间</button>
+	    			<button class="blockBox b">开始维修</button>
+	    			<button class="blockBox nulg">修改</button>
+	    			<button class="blockBox nulg">填写报修单</button>
+	    			<button class="blockBox nulg">设定到达时间</button>
+	    		</div>
+	    	</div>-->
+			</div>
+			<p id="loadmore" style="padding-bottom:1rem;text-align: center;font-size: 0.6rem;line-height: 1rem; display: none;"><img src="images/loading.gif" />正在加载更多的信息</p>
+		</div>
+		<script type="text/javascript">
+			//		封装好的选择日期绑定
+			//		该日期是android原生日期框,需要在手机运行
+			//开始日期
+			chooseDate({
+				ele: ".setTime div ", //触发日期弹窗的按钮
+				now: dateformatByMonthPrior(new Date()), //可以写auto 为目前时间
+				minDate: "2010-01-03", //最小日期
+				maxDate: "2030-12-31" //最大日期
+			}, function(nowDate) {
+				if(endDate < nowDate) {
+					layer.msg("请选择正确的时间顺序");
+					return;
+				}
+				if(nowDate != startDate) {
+					startDate = nowDate;
+					startNum = 0;
+					statusupdate = 0;
+					getlistinfo(newtokenId);
+				}
+			});
+			//结束日期
+			chooseDate({
+				ele: ".setTime div:last-of-type ", //触发日期弹窗的按钮
+				now: "auto", //可以写auto 为目前时间
+				minDate: "2010-01-03", //最小日期
+				maxDate: "2030-12-31" //最大日期
+			}, function(nowDate) {
+				if(startDate > nowDate) {
+					layer.msg("请选择正确的时间顺序");
+					return;
+				}
+				if(nowDate != endDate) {
+					endDate = nowDate;
+					startNum = 0;
+					statusupdate = 0;
+					getlistinfo(newtokenId);
+				}
+			});
+			mui.back = function() {
+				location.href = 'workControl.html';
+			}
+		</script>
+	</body>
+
+</html>

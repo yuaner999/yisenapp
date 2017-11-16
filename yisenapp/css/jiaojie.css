@@ -1,0 +1,29 @@
+#handoverb {
+  margin: 0 auto;
+  background: #017d7b;
+  color: #fff;
+  text-align: center;
+  width: 13rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0.375rem;
+  height: 1.675rem;
+  line-height: 1.675rem;
+  padding: 0;
+}
+.section {
+  margin: 0 auto;
+  font-size: 0.65rem;
+  margin-bottom: 3.75rem;
+  color: #017d7b;
+}
+.section select {
+  font-size: 0.65rem;
+  color: #017d7b;
+  padding: 0 !important;
+}
+.section .info {
+  margin-bottom: 0.75rem;
+}
+.section #info {
+  margin: 0.75rem 0;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+	<script type="text/javascript" src="js/common.js" ></script>
+	<script src="js/mobilesize.js" type="text/javascript" charset="utf-8"></script>
+	 
+	<script type="text/javascript" src="js/getToken.js" ></script>
+	<script type="text/javascript" src="js/jquery.md5.js" ></script>
+	<script type="text/javascript" src="layer/layer.js" ></script>
+	<link rel="stylesheet" href="kindeditor/themes/default/default.css"/>
+    <script charset="utf-8" src="kindeditor/kindeditor.js"></script>
+    <script charset="utf-8" src="kindeditor/lang/zh_CN.js"></script>
+	<script src="js/pageJs/message.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+//  	InitKindeitor();
+    	function InitKindeitor(){
+    		KindEditor.ready(function(K) {
+                window.editor = K.create('#editor_id');
+        	});
+    	}
+    </script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title">消息详情</h1>
+	</header>
+	<div class="mui-content">
+		<div class="info">
+			<div class="itemInfo">
+				<div class="left green justify">现场名称：</div>
+				<span id="sceneName"></span>
+			</div>
+			<div class="itemInfo">
+				<div class="left green justify">设备名称：</div>
+				<span></span>
+			</div>
+			<div class="itemInfo">
+				<div class="left green justify">部件名称：</div>
+				<span></span>
+			</div>
+			<div class="itemInfo">
+				<div class="left green justify">详 情：</div>
+				<div class="txt" readonly></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
